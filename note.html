@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Note | Herbert — Series</title>
+<meta name="description" content="A rendered study note from Herbert's blog series on interconnection networks and NoC modeling.">
+<meta name="author" content="Herbert">
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper default-version">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <div class="page-background">
+        <div class="image-1"><img src="images/icons/shape/icon-1.png" class="now-in-view" alt=""></div>
+        <div class="image-7"><img src="images/icons/shape/icon-7.png" class="now-in-view" alt=""></div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <div class="container">
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+                <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <!-- Toggle Button -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse scroll-nav clearfix">
+                        <ul class="navigation clearfix">
+
+                            <li class="current"><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#resume">Resume</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#work">Works</a></li>
+                            <li><a href="index.html#blog">Blog</a></li>
+                            <li><a href="series.html">Series</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+
+                         </ul>
+                    </div>
+                </nav>
+                <!-- Main Menu End-->
+            </div>
+            <!--Nav Outer End-->
+        </div>
+    </div>
+
+    <div class="card-outer">
+        <div class="scroll-box">
+            <div class="container" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+                <div class="card-wrapper">
+                    <div class="author-info" style="background-image:url(images/background/3.jpg)">
+                        <div class="image"><img src="images/resource/user.jpg" alt=""></div>
+                        <div class="author">
+                            <h3>Herbert</h3>
+                            <div class="designation">
+                                Hi i’m
+                                <div class="typing-title">
+                                    <p>an <strong>IC designer.</strong></p>
+                                    <p>a <strong>GPU architect.</strong></p>
+                                    <p>a <strong>NoC researcher.</strong></p>
+                                    <p>a <strong>Life-long Learner.</strong></p>
+                                </div>
+                                <span class="typed-title"></span>
+                            </div>
+                        </div>
+                        <div class="link-btn">
+                            <a href="https://github.com/hujian404" target="_blank" class="theme-btn btn-style-one">Visit GitHub</a>
+                        </div>
+                        <ul class="social-icon-two">
+                            <li><a href="https://github.com/hujian404" target="_blank"><span class="fa fa-github"></span></a></li>
+                            <li><a href="mailto:3194446884@qq.com"><span class="fa fa-envelope"></span></a></li>
+                            <li><a href="index.html"><span class="fa fa-home"></span></a></li>
+                            <li><a href="series.html"><span class="fa fa-th-large"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="card-inner-box offsetleft">
+                        <header class="header">
+                            <ul class="main-menu">
+                                <li class="home"><a class="logo" href="index.html"><img src="images/logo.png" alt=""></a></li>
+                                <li><a href="series.html"><i class="flaticon-layers-1"></i>Series</a></li>
+                                <li class="active"><a href="#" id="js-header-series"><i class="flaticon-folder"></i>Note</a></li>
+                            </ul>
+                        </header>
+
+                        <!-- card item -->
+                        <div class="card-series card-item active" id="note" style="background-image:url(images/background/2.jpg)">
+                            <div class="card-inner">
+                                <div class="series-back">
+                                    <a href="series.html" class="js-back"><i class="fa fa-arrow-left"></i>All Series</a>
+                                </div>
+
+                                <!-- breadcrumb + edit -->
+                                <div class="note-meta">
+                                    <div class="breadcrumb">
+                                        <a href="series.html">Series</a> / <a href="booksim-series.html" id="js-breadcrumb-series">BookSim Notes</a>
+                                    </div>
+                                    <a href="#" id="js-edit-link" class="edit-link" target="_blank" rel="noopener" style="display:none;">
+                                        <i class="fa fa-pencil"></i>Edit on GitHub
+                                    </a>
+                                </div>
+
+                                <h4 class="title" id="note-title">BookSim Notes</h4>
+
+                                <!-- compact bilingual notice -->
+                                <div class="md-content-notice">
+                                    <strong>Original work by Herbert.</strong> Reproduction must credit the source (<a href="https://hujian404.github.io/" target="_blank">hujian404.github.io</a>) and the author. / <strong>原创作品</strong>，转载请注明出处及作者（Herbert）。
+                                </div>
+
+                                <!-- loading -->
+                                <div class="md-loading" id="md-loading">
+                                    <i class="fa fa-spinner fa-spin"></i>Loading note…
+                                </div>
+
+                                <!-- error -->
+                                <div class="md-error" id="md-error" style="display:none;">
+                                    <h5><i class="fa fa-exclamation-triangle"></i> Note unavailable</h5>
+                                    <span id="md-error-msg">Could not load this note. It may not have been published yet.</span>
+                                    <div style="margin-top:12px;"><a href="series.html" class="js-back" style="color:#9147ff;font-weight:600;">← Back to all series</a></div>
+                                </div>
+
+                                <!-- rendered markdown -->
+                                <div class="md-content" id="md-content"></div>
+
+                                <div class="series-back" style="margin-top:30px;">
+                                    <a href="series.html" class="js-back"><i class="fa fa-arrow-left"></i>All Series</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end item -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--End pagewrapper-->
+
+
+<script src="js/jquery.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/element-in-view.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/mousemoveparallax.js"></script>
+<script src="js/pagenav.js"></script>
+<script src="js/jquery-type.js"></script>
+<script src="js/particle-alone.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/script.js"></script>
+
+<!-- Markdown renderer -->
+<script src="js/marked.min.js"></script>
+
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+<script src="js/gmaps.js"></script>
+<script src="js/map-script.js"></script>
+<!--End Google Map APi-->
+
+<!-- Note reader: fetch the markdown for this series/file and render it client-side.
+     Edits to the .md pushed to GitHub are reflected automatically on next load. -->
+<script>
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    var s = params.get('s') || 'booksim';
+    var f = params.get('f');
+
+    var SERIES = {
+        booksim:       { path: 'notes/booksim-notes/',         label: 'BookSim Notes',          back: 'booksim-series.html' },
+        constellation: { path: 'notes/constellation-notes/',   label: 'Chipyard Constellation', back: 'constellation-series.html' },
+        garnet:        { path: 'notes/garnet-notes/',          label: 'Gem5 Garnet',            back: 'garnet-series.html' }
+    };
+    var GH_BASE = 'https://github.com/hujian404/hujian404.github.io/blob/main/';
+    var meta = SERIES[s] || SERIES.booksim;
+
+    // Wire up series-specific links / labels
+    var backLinks = document.querySelectorAll('.js-back');
+    for (var i = 0; i < backLinks.length; i++) backLinks[i].setAttribute('href', meta.back);
+    document.getElementById('js-breadcrumb-series').textContent = meta.label;
+    document.getElementById('js-breadcrumb-series').setAttribute('href', meta.back);
+    document.getElementById('js-header-series').textContent = meta.label;
+    document.getElementById('note-title').textContent = meta.label;
+
+    var loadingEl = document.getElementById('md-loading');
+    var errorEl   = document.getElementById('md-error');
+    var errMsgEl  = document.getElementById('md-error-msg');
+    var contentEl = document.getElementById('md-content');
+    var editLink  = document.getElementById('js-edit-link');
+    var titleEl   = document.getElementById('note-title');
+
+    function showError(msg) {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        if (msg) errMsgEl.textContent = msg;
+    }
+
+    // Validate inputs
+    if (!f) { showError('No note was specified to display.'); return; }
+    if (/[\/\\]/.test(f) || f.indexOf('..') !== -1) { showError('Invalid note file reference.'); return; }
+    if (!/\.md$/i.test(f)) { showError('Only markdown (.md) notes can be rendered here.'); return; }
+
+    editLink.setAttribute('href', GH_BASE + meta.path + f);
+    editLink.style.display = '';
+
+    // Cache-bust so freshly committed edits show up without waiting on cached copies
+    var url = meta.path + encodeURIComponent(f) + '?v=' + Date.now();
+
+    fetch(url, { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+        .then(function (md) {
+            // Strip AI citation artifacts that leaked into the source notes
+            md = md.replace(/:contentReference\[[^\]]*\]\{[^}]*\}/g, '');
+
+            // Render markdown -> HTML
+            var html;
+            try {
+                html = (window.marked && window.marked.parse) ? window.marked.parse(md) : window.marked(md);
+            } catch (e) {
+                html = window.marked(md);
+            }
+
+            // Rewrite relative asset URLs (e.g. pic/0/0_cover.png) to resolve under the series folder
+            var base = meta.path;
+            html = html.replace(/src="(?!https?:|\/|data:|#)([^"]+)"/g, 'src="' + base + '$1"');
+            html = html.replace(/src='(?!https?:|\/|data:|#)([^']+)'/g, "src='" + base + "$1'");
+
+            // Rewrite relative .md links to the in-site reader
+            html = html.replace(/href="(?!https?:|\/|#|mailto:)([^"]+\.md)"/g, function (m, p1) {
+                var name = p1.split('/').pop();
+                return 'href="note.html?s=' + encodeURIComponent(s) + '&f=' + encodeURIComponent(name) + '"';
+            });
+
+            contentEl.innerHTML = html;
+            loadingEl.style.display = 'none';
+
+            // Use the note's first H1 as the document title for context
+            var h1 = contentEl.querySelector('h1');
+            if (h1 && h1.textContent.trim()) {
+                document.title = h1.textContent.trim() + ' | Herbert';
+            }
+            // smooth-scroll to top on load
+            try { window.scrollTo(0, 0); } catch (e) {}
+        })
+        .catch(function (err) {
+            showError('Could not load this note (' + err.message + '). It may not have been published yet, or it is still a draft.');
+        });
+})();
+</script>
+
+</body>
+</html>
