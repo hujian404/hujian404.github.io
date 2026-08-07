@@ -654,5 +654,5 @@ BookSim、Noxim、Garnet 几乎都是这个结构。
 
 ---
 
-<a class="next-chapter-link" href="02_a_simple_interconnection_network.md"><strong>下一篇：Chapter 2 —— A Simple Interconnection Network</strong></a>
+<a href="02_a_simple_interconnection_network.md">下一篇：Chapter 2 —— A Simple Interconnection Network</a>
 

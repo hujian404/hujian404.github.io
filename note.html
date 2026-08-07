@@ -270,6 +270,25 @@
             contentEl.innerHTML = html;
             loadingEl.style.display = 'none';
 
+            // Style "next chapter" links: the last in-content <a> that points
+            // to another .md note gets a distinct card-style presentation.
+            // (marked.js strips class attributes from inline HTML, so we
+            //  post-process instead.)
+            (function () {
+                var noteLinks = contentEl.querySelectorAll('a[href*="note.html?s="]');
+                if (noteLinks.length) {
+                    var last = noteLinks[noteLinks.length - 1];
+                    // Skip links that are part of the auto-generated TOC
+                    // (those sit inside tables or list items with code blocks)
+                    if (last.closest('table, ul, ol')) return;
+                    last.classList.add('next-chapter-link');
+                    // Re-wrap the text in <strong> for emphasis
+                    if (last.textContent && last.querySelector('strong') === null) {
+                        last.innerHTML = '<strong>' + last.textContent + '</strong>';
+                    }
+                }
+            })();
+
             // Use the note's first H1 as the document title for context
             var h1 = contentEl.querySelector('h1');
             if (h1 && h1.textContent.trim()) {
