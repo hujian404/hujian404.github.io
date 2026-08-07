@@ -227,4 +227,4 @@ BookSim源码实现
 
 ---
 
-> **[下一篇：Chapter 1 —— Introduction to Interconnection Networks](01_introduction_to_interconnection_networks.md)**
+<a class="next-chapter-link" href="01_introduction_to_interconnection_networks.md"><strong>下一篇：Chapter 1 —— Introduction to Interconnection Networks</strong></a>

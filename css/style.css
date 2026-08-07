@@ -2010,6 +2010,28 @@ img{
 	border-bottom-style: solid;
 }
 
+.md-content a.next-chapter-link {
+	display: block;
+	margin: 30px 0 10px;
+	padding: 14px 20px;
+	background: #f8e9e9;
+	border: 1px solid #e5c9e5;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 15px;
+	color: #9147ff;
+	border-bottom: none;
+	transition: all 0.25s ease;
+}
+
+.md-content a.next-chapter-link:hover {
+	background: #efe0fe;
+	border-color: #9147ff;
+	color: #7927f5;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 14px rgba(145, 71, 255, 0.18);
+}
+
 .md-content ul,
 .md-content ol {
 	margin: 0 0 16px;
