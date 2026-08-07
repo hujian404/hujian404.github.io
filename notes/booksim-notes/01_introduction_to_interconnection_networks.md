@@ -652,3 +652,7 @@ BookSim、Noxim、Garnet 几乎都是这个结构。
 
 **延迟 - 吞吐量曲线（Figure 1.12）**是互连网络通用性能评价框架，核心指标为**零负载延迟、饱和吞吐量**；所有优化都在追求更低的零负载延迟、更高的饱和吞吐量以及更好的中高负载性能。
 
+---
+
+> **[下一篇：Chapter 2 —— A Simple Interconnection Network](02_a_simple_interconnection_network.md)**
+
