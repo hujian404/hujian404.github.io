@@ -1,24 +1,14 @@
-# Herbert | Personal Blog
+# Personal Website
 
-A personal blog built from an HTML/CSS/JS vCard template and hosted for free on **GitHub Pages**.
+A personal portfolio & blog built from a static HTML/CSS/JS vCard template, hosted for free on **GitHub Pages**.
 
-## About
+**Live site:** https://hujian404.github.io
 
-IC design engineer. Research interests: **GPU architecture** and **Network-on-Chip (NoC) modeling & implementation**.
+## Features
 
-## Directory structure
-
-```
-.
-├── index.html          # Home (Home / About / Skills / Resume / Services / Works / Blog / Contact)
-├── blog-single.html    # Single blog post page
-├── css/                # Stylesheets
-├── js/                 # Scripts
-├── fonts/              # Icon fonts
-└── images/             # Image assets
-```
-
-> All asset references use **relative paths**, so the site loads correctly whether it is served from a user site (`<username>.github.io`) or a project subpath.
+- Single-page card-based layout with smooth transitions between sections
+- Multiple blog series / columns rendered client-side from Markdown files
+- Fully responsive — adaptive layout on mobile, tablet, and desktop
 
 ## Local preview
 
@@ -33,20 +23,23 @@ python -m http.server 8000
 ## Deploy to GitHub Pages
 
 1. Push the code to the `main` branch root of your GitHub repository.
-2. For a user site, rename the repository to `<username>.github.io` (e.g. `hujian404.github.io`).
+2. For a user site, rename the repository to `<username>.github.io`.
 3. In the repository, go to **Settings → Pages**, set Source to the `main` branch and `/ (root)` directory, then save.
 4. Wait 1–2 minutes and visit `https://<username>.github.io`.
 
-## Customization
+## Directory structure
 
-Content to edit lives in `index.html` and `blog-single.html`:
+```
+.
+├── *.html              # Pages (index, blog, series, note reader, etc.)
+├── css/                # Stylesheets
+├── js/                 # Scripts
+├── notes/              # Markdown notes grouped by series
+├── fonts/              # Icon fonts
+└── images/             # Image assets
+```
 
-- **Author / tagline**: search for `Herbert`, `IC designer` / `GPU architect` / `NoC researcher`.
-- **Contact**: search for `3194446884@qq.com`, `hujian404`.
-- **Social links**: search for `github.com/hujian404`, `mailto:`.
-- **Blog posts**: edit the `news-block` items under `id="blog"` in `index.html`, and the post body in `blog-single.html`.
-- **Resume / Works**: currently placeholders — replace with real education, experience, and project entries when ready.
-- **Contact form**: uses `mailto:` so it works on static hosting. For a richer form, integrate a service such as [Formspree](https://formspree.io/) and replace the `<form>` `action`.
+All asset references use **relative paths**, so the site loads correctly whether it is served from a user site (`<username>.github.io`) or a project subpath.
 
 ## Notes
 

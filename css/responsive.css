@@ -321,5 +321,36 @@
 }
 
 
+/*======== Note reader (note.html): adaptive PC layout =========
+
+   Bootstrap locks .container at 1170px above 1200px, so on modern wide
+   monitors the reading card wastes horizontal space and the reading column
+   stays fixed at 720px. These rules let the note reader grow fluidly with
+   the viewport (capped for comfortable line length). Only the reading
+   column widens; the 350px author sidebar and 100px header rail stay fixed.
+   Reading width = container - 450px. Scoped via .note-reader on <body>.
+   ============================================================== */
+
+@media only screen and (min-width: 1300px){
+	.note-reader .card-outer .container { width: 1260px; }
+	.note-reader .card-outer .card-item { max-width: 810px; }
+}
+
+@media only screen and (min-width: 1400px){
+	.note-reader .card-outer .container { width: 1340px; }
+	.note-reader .card-outer .card-item { max-width: 890px; }
+}
+
+@media only screen and (min-width: 1500px){
+	.note-reader .card-outer .container { width: 1420px; }
+	.note-reader .card-outer .card-item { max-width: 970px; }
+}
+
+@media only screen and (min-width: 1600px){
+	.note-reader .card-outer .container { width: 1500px; }
+	.note-reader .card-outer .card-item { max-width: 1050px; }
+}
+
+
 
 
