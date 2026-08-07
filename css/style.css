@@ -1605,6 +1605,321 @@ img{
 	display: none;
 }
 
+/*** 
+
+====================================================================
+	Series / Columns Pages
+====================================================================
+
+***/
+
+.card-series {
+	padding: 50px 50px;
+}
+
+.card-series .title {
+	font-size: 22px;
+	font-weight: 500;
+	color: #222;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	margin-top: -9px;
+}
+
+.card-series .series-lead {
+	color: #555;
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+
+/* Original declaration block (bilingual) */
+.series-declaration {
+	position: relative;
+	background: #f8e9e9;
+	border-left: 4px solid #9147ff;
+	border-radius: 5px;
+	padding: 22px 26px;
+	margin-bottom: 35px;
+}
+
+.series-declaration h5 {
+	font-size: 15px;
+	font-weight: 600;
+	color: #9147ff;
+	margin: 0 0 8px;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+}
+
+.series-declaration p {
+	color: #444;
+	font-size: 14px;
+	line-height: 1.8;
+	margin: 0 0 10px;
+}
+
+.series-declaration p:last-child {
+	margin-bottom: 0;
+}
+
+.series-declaration .decl-zh {
+	border-top: 1px dashed #e0cfcf;
+	padding-top: 10px;
+	margin-top: 12px;
+}
+
+/* Column cards grid */
+.series-columns {
+	position: relative;
+	margin: 0 -10px 35px;
+}
+
+.series-card {
+	position: relative;
+	display: block;
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 6px;
+	padding: 28px 26px;
+	margin-bottom: 20px;
+	transition: all .3s ease;
+	overflow: hidden;
+}
+
+.series-card:hover {
+	border-color: #9147ff;
+	box-shadow: 0 10px 30px rgba(145, 71, 255, 0.12);
+	transform: translateY(-3px);
+}
+
+.series-card .series-tag {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 600;
+	color: #fff;
+	background: #9147ff;
+	border-radius: 3px;
+	padding: 3px 10px;
+	margin-bottom: 14px;
+	letter-spacing: .5px;
+}
+
+.series-card .series-tag.soon {
+	background: #b9a8d8;
+}
+
+.series-card h4 {
+	font-size: 19px;
+	font-weight: 600;
+	color: #222;
+	margin-bottom: 8px;
+}
+
+.series-card h4 a {
+	color: #222;
+}
+
+.series-card .series-sub {
+	font-size: 13px;
+	color: #9147ff;
+	margin-bottom: 12px;
+	font-weight: 500;
+}
+
+.series-card .series-desc {
+	color: #666;
+	font-size: 14px;
+	line-height: 1.8;
+	margin-bottom: 16px;
+}
+
+.series-card .series-link {
+	font-size: 13px;
+	font-weight: 600;
+	color: #9147ff;
+}
+
+.series-card .series-link .fa {
+	margin-left: 4px;
+	transition: transform .3s ease;
+}
+
+.series-card:hover .series-link .fa {
+	transform: translateX(4px);
+}
+
+/* References list */
+.series-references {
+	position: relative;
+	background: #fafafa;
+	border: 1px solid #ececec;
+	border-radius: 5px;
+	padding: 22px 26px;
+	margin-bottom: 35px;
+}
+
+.series-references h5 {
+	font-size: 15px;
+	font-weight: 600;
+	color: #222;
+	margin-bottom: 12px;
+}
+
+.series-references ul {
+	margin: 0;
+	padding-left: 18px;
+}
+
+.series-references li {
+	color: #555;
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+.series-references a {
+	color: #9147ff;
+	word-break: break-word;
+}
+
+/* Chapter listing */
+.chapter-list {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.chapter-part {
+	position: relative;
+	margin-bottom: 28px;
+}
+
+.chapter-part > h5 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #fff;
+	background: linear-gradient(110deg, rgb(145,71,255) 0%, rgb(121,39,245) 100%);
+	border-radius: 5px;
+	padding: 10px 18px;
+	margin-bottom: 14px;
+}
+
+.chapter-part .part-desc {
+	color: #777;
+	font-size: 13px;
+	margin: -8px 0 14px 4px;
+}
+
+.chapter-item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	border: 1px solid #ececec;
+	border-radius: 5px;
+	padding: 12px 16px;
+	margin-bottom: 10px;
+	transition: all .25s ease;
+	background: #fff;
+}
+
+.chapter-item:hover {
+	border-color: #9147ff;
+	background: #fcfaff;
+}
+
+.chapter-item .ch-num {
+	flex: 0 0 64px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #9147ff;
+}
+
+.chapter-item .ch-title {
+	flex: 1;
+	font-size: 14px;
+	color: #222;
+	font-weight: 500;
+}
+
+.chapter-item .ch-status {
+	flex: 0 0 auto;
+	font-size: 12px;
+	color: #b9a8d8;
+	margin-left: 10px;
+}
+
+.chapter-item .ch-status.done {
+	color: #51dbc3;
+}
+
+.chapter-item a.ch-title {
+	color: #222;
+}
+
+.chapter-item a.ch-title:hover {
+	color: #9147ff;
+}
+
+.chapter-item .ch-arrow {
+	flex: 0 0 auto;
+	color: #ccc;
+	margin-left: 12px;
+	transition: transform .25s ease;
+}
+
+.chapter-item:hover .ch-arrow {
+	color: #9147ff;
+	transform: translateX(3px);
+}
+
+/* Coming soon block */
+.coming-soon {
+	position: relative;
+	text-align: center;
+	background: #fafafa;
+	border: 1px dashed #d9c9ec;
+	border-radius: 6px;
+	padding: 50px 30px;
+	margin-bottom: 30px;
+}
+
+.coming-soon .cs-icon {
+	font-size: 40px;
+	color: #b9a8d8;
+	margin-bottom: 16px;
+}
+
+.coming-soon h4 {
+	font-size: 20px;
+	color: #444;
+	margin-bottom: 10px;
+}
+
+.coming-soon p {
+	color: #888;
+	font-size: 14px;
+	line-height: 1.8;
+	max-width: 560px;
+	margin: 0 auto;
+}
+
+/* Back link */
+.series-back {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.series-back a {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	color: #9147ff;
+}
+
+.series-back a .fa {
+	margin-right: 6px;
+}
+
 
 /*** 
 

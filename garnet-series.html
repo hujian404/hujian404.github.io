@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gem5 Garnet | Herbert — Series</title>
+<meta name="description" content="Gem5 Garnet series — notes on the detailed on-chip network model inside the gem5 full-system simulator. Coming soon.">
+<meta name="author" content="Herbert">
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<!--Favicon-->
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper default-version">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <div class="page-background">
+        <div class="image-1"><img src="images/icons/shape/icon-1.png" class="now-in-view" alt=""></div>
+        <div class="image-7"><img src="images/icons/shape/icon-7.png" class="now-in-view" alt=""></div>
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <div class="container">
+            <!--Nav Outer-->
+            <div class="nav-outer clearfix">
+                <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                    <div class="navbar-header">
+                        <!-- Toggle Button -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse scroll-nav clearfix">
+                        <ul class="navigation clearfix">
+
+                            <li class="current"><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#resume">Resume</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#work">Works</a></li>
+                            <li><a href="index.html#blog">Blog</a></li>
+                            <li><a href="series.html">Series</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+
+                         </ul>
+                    </div>
+                </nav>
+                <!-- Main Menu End-->
+            </div>
+            <!--Nav Outer End-->
+        </div>
+    </div>
+
+    <div class="card-outer">
+        <div class="scroll-box">
+            <div class="container" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+                <div class="card-wrapper">
+                    <div class="author-info" style="background-image:url(images/background/3.jpg)">
+                        <div class="image"><img src="images/resource/user.jpg" alt=""></div>
+                        <div class="author">
+                            <h3>Herbert</h3>
+                            <div class="designation">
+                                Hi i’m
+                                <div class="typing-title">
+                                    <p>an <strong>IC designer.</strong></p>
+                                    <p>a <strong>GPU architect.</strong></p>
+                                    <p>a <strong>NoC researcher.</strong></p>
+                                    <p>a <strong>Life-long Learner.</strong></p>
+                                </div>
+                                <span class="typed-title"></span>
+                            </div>
+                        </div>
+                        <div class="link-btn">
+                            <a href="https://github.com/hujian404" target="_blank" class="theme-btn btn-style-one">Visit GitHub</a>
+                        </div>
+                        <ul class="social-icon-two">
+                            <li><a href="https://github.com/hujian404" target="_blank"><span class="fa fa-github"></span></a></li>
+                            <li><a href="mailto:3194446884@qq.com"><span class="fa fa-envelope"></span></a></li>
+                            <li><a href="index.html"><span class="fa fa-home"></span></a></li>
+                            <li><a href="series.html"><span class="fa fa-th-large"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="card-inner-box offsetleft">
+                        <header class="header">
+                            <ul class="main-menu">
+                                <li class="home"><a class="logo" href="index.html"><img src="images/logo.png" alt=""></a></li>
+                                <li><a href="series.html"><i class="flaticon-layers-1"></i>Series</a></li>
+                                <li class="active"><a href="garnet-series.html"><i class="flaticon-folder"></i>Garnet</a></li>
+                            </ul>
+                        </header>
+
+                        <!-- card item -->
+                        <div class="card-series card-item active" id="garnet" style="background-image:url(images/background/2.jpg)">
+                            <div class="card-inner">
+                                <div class="series-back">
+                                    <a href="series.html"><i class="fa fa-arrow-left"></i>All Series</a>
+                                </div>
+                                <h4 class="title">Gem5 Garnet</h4>
+                                <div class="series-lead">
+                                    A planned series on <strong>GARNET</strong> — the detailed on-chip network model inside the gem5 full-system simulator. Notes will walk through the garnet router pipeline, credit-based flow control, virtual networks and virtual channels, the synthetic traffic tester (garnet_synthetic), and integration with Ruby and the full system memory system.
+                                </div>
+
+                                <!-- Bilingual original declaration -->
+                                <div class="series-declaration">
+                                    <h5>Original Declaration</h5>
+                                    <p>All articles in this series are original works by <strong>Herbert</strong>. Reproduction or redistribution in any form must clearly attribute the source (<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>) and the author (Herbert). Unauthorized commercial use is prohibited.</p>
+                                    <div class="decl-zh">
+                                        <h5>原创声明</h5>
+                                        <p>本系列所有文章均为 <strong>Herbert</strong> 原创作品。转载或引用请务必注明出处（<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>）及作者（Herbert）。未经授权，禁止用于任何商业用途。</p>
+                                    </div>
+                                </div>
+
+                                <!-- References -->
+                                <div class="series-references">
+                                    <h5>Primary References</h5>
+                                    <ul>
+                                        <li><strong>Paper:</strong> <em>GARNET: A Detailed On-Chip Network Model inside a Full-System Simulator</em></li>
+                                        <li><strong>Simulator:</strong> gem5 — <a href="https://www.gem5.org/" target="_blank">gem5.org</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Coming soon -->
+                                <div class="coming-soon">
+                                    <div class="cs-icon"><i class="fa fa-wrench"></i></div>
+                                    <h4>Coming Soon</h4>
+                                    <p>This column is being planned. The chapter outline and the first notes will be published once the framework is ready. In the meantime, you can follow the gem5 project above or check back on the <a href="series.html">series page</a>.</p>
+                                </div>
+
+                                <div class="series-back">
+                                    <a href="series.html"><i class="fa fa-arrow-left"></i>All Series</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end item -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--End pagewrapper-->
+
+
+<script src="js/jquery.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/element-in-view.js"></script>
+<script src="js/knob.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/mousemoveparallax.js"></script>
+<script src="js/pagenav.js"></script>
+<script src="js/jquery-type.js"></script>
+<script src="js/particle-alone.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/script.js"></script>
+
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
+<script src="js/gmaps.js"></script>
+<script src="js/map-script.js"></script>
+<!--End Google Map APi-->
+
+</body>
+</html>

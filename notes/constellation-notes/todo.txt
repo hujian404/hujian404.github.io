@@ -1,0 +1,2 @@
+论文：Constellation: An Open-Source SoC-Capable NoC Generator
+链接：https://github.com/ucb-bar/constellation/tree/c1b42cd0c7c7d6e4fc1ed9bf1f86fbd3b31ac510
