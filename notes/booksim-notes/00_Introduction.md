@@ -80,6 +80,8 @@ BookSim源码实现
 
 本系列将严格按照原书章节顺序进行整理，每一篇对应一个 Chapter。
 
+![1_outline](pic/1_outline.png)
+
 ## Part 0：专栏介绍
 
 | 序号 | 文件名               | 内容             |
