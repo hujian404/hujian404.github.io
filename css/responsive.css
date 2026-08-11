@@ -313,6 +313,13 @@
 
 }
 
+/* Hide the sidebar toggle on mobile, where the author sidebar is
+   already display:none (see .author-info in the max-width:1199px block
+   above). There's nothing to toggle, so the floating button is noise. */
+@media only screen and (max-width: 1199px){
+	.sidebar-toggle { display: none !important; }
+}
+
 @media only screen and (max-width: 500px){
 	.news-block .date {
 		top: 0;

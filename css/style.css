@@ -671,6 +671,87 @@ img{
 /*** 
 
 ====================================================================
+	Sidebar toggle (blog & series pages only)
+====================================================================
+
+	A small floating button on the left edge lets readers hide the
+	350px Herbert author sidebar on blog and series pages, so the
+	reading column can use the full card width on wide screens.
+	The toggle is injected by js/sidebar-toggle.js and is only
+	present on pages whose <body> carries the "sidebar-toggleable"
+	class (blog-single, series, booksim-series, constellation-series,
+	garnet-series, note). About / Resume / Services / Works / Home
+	(index.html) do NOT get the toggle and always show the sidebar.
+	State is persisted in localStorage across page loads.
+
+***/
+
+.sidebar-toggle {
+	position: fixed;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 200;
+	width: 26px;
+	height: 56px;
+	border: 1px solid #e0d4f0;
+	border-left: 0;
+	border-radius: 0 8px 8px 0;
+	background: #fff;
+	color: #9147ff;
+	font-size: 14px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 2px 1px 8px rgba(0, 0, 0, 0.12);
+	transition: background .2s ease, color .2s ease, opacity .2s ease;
+	padding: 0;
+	line-height: 1;
+}
+
+.sidebar-toggle:hover {
+	background: #9147ff;
+	color: #fff;
+}
+
+.sidebar-toggle .fa {
+	transition: transform .25s ease;
+}
+
+/* When sidebar is visible, chevron points left (toward sidebar).
+   When hidden, it points right (toward content). */
+body:not(.sidebar-hidden) .sidebar-toggle .fa {
+	transform: rotate(0deg);          /* fa-caret-left by default */
+}
+
+body.sidebar-hidden .sidebar-toggle .fa {
+	transform: rotate(180deg);         /* flip caret to point right */
+}
+
+/* Slide the author sidebar off-screen when hidden. */
+body.sidebar-hidden .author-info {
+	transform: translateX(-100%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Re-flow the card content to fill the space left by the sidebar.
+   .card-inner-box.offsetleft normally has transform: translate(350px);
+   resetting it to 0 moves the card left. The 100px header rail stays. */
+body.sidebar-hidden .card-outer .card-inner-box.offsetleft {
+	transform: translate(0px);
+}
+
+/* Smooth transitions for the hide/show animation. */
+.author-info,
+.card-outer .card-inner-box.offsetleft {
+	transition: transform .35s ease, opacity .35s ease;
+}
+
+/*** 
+
+====================================================================
 	About Us	
 ====================================================================
 
