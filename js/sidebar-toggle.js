@@ -53,6 +53,26 @@
             } catch (e) {
                 /* ignore storage errors */
             }
+
+            /* Notify niceScroll (if present on .card-inner) to
+               recalculate dimensions after the sidebar show/hide
+               transition changes the reading-column width.
+               Without this, the niceScroll wrapper retains the old
+               width and content can overflow under the sidebar. */
+            var cardInner = document.querySelector('.card-inner');
+            if (cardInner && window.jQuery && window.jQuery.fn && window.jQuery.fn.niceScroll) {
+                try {
+                    var ns = window.jQuery(cardInner).getNiceScroll();
+                    if (ns && ns.length) {
+                        /* Wait for the CSS transition (0.35s) to finish
+                           before resizing so niceScroll measures the
+                           final dimensions. */
+                        setTimeout(function () {
+                            ns.resize();
+                        }, 400);
+                    }
+                } catch (e) { /* ignore */ }
+            }
         });
     });
 })();

@@ -516,6 +516,17 @@ img{
 	transform: translate(350px);
 }
 
+/* Prevent wide markdown content (e.g. ASCII art in code blocks) from
+   overflowing horizontally and going under the author sidebar. The
+   .md-content inside already has overflow-x:auto for in-content
+   scrolling; this clips anything that escapes at the card level.
+   Scoped to note-reader / series-reader (blog & series pages with
+   the 350px sidebar) to avoid affecting home/about/resume pages. */
+.note-reader .card-outer .card-inner-box,
+.series-reader .card-outer .card-inner-box {
+	overflow-x: hidden;
+}
+
 .card-item {
     position: absolute;
     border-radius: 6px;
@@ -541,6 +552,14 @@ img{
 .card-item .card-inner {
 	height: 100%;
 	transition: .5s ease;
+}
+
+/* Safety net: clip horizontal overflow at the .card-inner level too,
+   so the nicescroll wrapper can never push content left under the
+   sidebar even before niceScroll initialises or after sidebar toggle. */
+.note-reader .card-item .card-inner,
+.series-reader .card-item .card-inner {
+	overflow-x: hidden;
 }
 
 .card-inner-box .card-home {

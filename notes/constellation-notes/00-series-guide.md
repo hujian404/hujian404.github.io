@@ -1282,3 +1282,7 @@ Chipyard 用于理解：
 > **为什么现代异构 SoC 需要 Constellation？**
 
 将从传统 Bus、Crossbar、规则 Mesh NoC 出发，逐步分析 heterogeneous SoC 的互连需求，并理解 Constellation 所针对的 irregular NoC design space。
+
+---
+
+<a href="01-why-constellation.md">下一篇：Chapter 1 —— Why Constellation?</a>
