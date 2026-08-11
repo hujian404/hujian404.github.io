@@ -373,11 +373,13 @@ img{
 	left: 0;
 	top: 0;
 	bottom: 0;
+	width: 100px;
 	background-color: #f8e9e9;
 	border-radius: 5px;
 	transition: .5s ease;
 	z-index: 99;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 .card-outer .card-inner-box.offsetleft .header {
@@ -415,10 +417,10 @@ img{
 .header ul li a {
 	position: relative;
 	color: #212121;
-	padding: 15px 21px 12px;
+	padding: 15px 10px 12px;
 
 	display:  block;
-	font-size:  14px;
+	font-size:  13px;
 	font-family:  'Poppins', sans-serif;
 	background: #f8e9e9;
 	z-index: 99;
@@ -638,11 +640,13 @@ img{
 	text-align: center;
 	padding: 50px 15px;
 	padding-top: 140px;
-	min-width: 350px;
+	width: 350px;
 	border-bottom-left-radius: 6px;
 	border-top-left-radius: 8px;
 	background-repeat: no-repeat;
 	background-position: center;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .author-info .image {
