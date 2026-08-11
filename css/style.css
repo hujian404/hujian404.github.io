@@ -743,6 +743,13 @@ body.sidebar-hidden .card-outer .card-inner-box.offsetleft {
 	transform: translate(0px);
 }
 
+/* Widen the reading column by 350px when the sidebar is hidden, so the
+   freed sidebar space is used for content instead of leaving a blank
+   column on the right. Default .card-item max-width is 720px → 1070px. */
+body.sidebar-hidden .card-outer .card-item {
+	max-width: 1070px;
+}
+
 /* Smooth transitions for the hide/show animation. */
 .author-info,
 .card-outer .card-inner-box.offsetleft {

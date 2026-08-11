@@ -435,6 +435,38 @@
 }
 
 
+/*======== Sidebar-hidden: widen reading column on note-reader / series-reader ====
+
+   When the user hides the 350px author sidebar (body.sidebar-hidden),
+   the reading column must grow by 350px to fill the freed space,
+   otherwise a blank column appears on the right. The base
+   body.sidebar-hidden rule in style.css handles the default 720px →
+   1070px case; here we override each note-reader / series-reader
+   breakpoint by the same +350px so the widening tracks the viewport.
+   ============================================================== */
+
+@media only screen and (min-width: 1300px){
+	body.note-reader.sidebar-hidden .card-outer .card-item,
+	body.series-reader.sidebar-hidden .card-outer .card-item { max-width: 1160px; }
+}
+
+@media only screen and (min-width: 1400px){
+	body.note-reader.sidebar-hidden .card-outer .card-item,
+	body.series-reader.sidebar-hidden .card-outer .card-item { max-width: 1240px; }
+}
+
+@media only screen and (min-width: 1500px){
+	body.note-reader.sidebar-hidden .card-outer .card-item,
+	body.series-reader.sidebar-hidden .card-outer .card-item { max-width: 1320px; }
+}
+
+@media only screen and (min-width: 1600px){
+	body.note-reader.sidebar-hidden .card-outer .card-item,
+	body.series-reader.sidebar-hidden .card-outer .card-item { max-width: 1400px; }
+}
+
+
+
 
 
 
