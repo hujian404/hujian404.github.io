@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Chipyard Constellation | Herbert — Series</title>
-<meta name="description" content="Chipyard Constellation series — notes on the open-source SoC-capable NoC generator. Coming soon.">
+<meta name="description" content="Chipyard Constellation series — a deep dive into the open-source SoC-capable NoC generator, from paper and source code to RTL, simulation and NoC research.">
 <meta name="author" content="Herbert">
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -117,16 +117,16 @@
                                 </div>
                                 <h4 class="title">Chipyard Constellation</h4>
                                 <div class="series-lead">
-                                    A planned series on <strong>Constellation</strong> — the open-source, SoC-capable Network-on-Chip generator from UC Berkeley, integrated into the Chipyard agile SoC design framework. Notes will cover the NoC generation flow, topology and routing configuration, physical mapping, and co-simulation with the Rocket/BOOM core tiles.
+                                    A deep dive into <strong>Constellation</strong> — the open-source, SoC-capable Network-on-Chip generator from UC Berkeley, integrated into the Chipyard agile SoC framework. Rather than stopping at "how to run Constellation", this series works from the paper, through the design abstractions and GitHub source, down to the Chisel/RTL implementation, and finally into NoC performance experiments and secondary development — building a systematic understanding of a modern, highly parameterized NoC generator. The series follows a five-stage roadmap: <em>Understanding Constellation → NoC Generator → Router &amp; Protocol → Evaluation → Research</em>.
                                 </div>
 
                                 <!-- Bilingual original declaration -->
                                 <div class="series-declaration">
                                     <h5>Original Declaration</h5>
-                                    <p>All articles in this series are original works by <strong>Herbert</strong>. Reproduction or redistribution in any form must clearly attribute the source (<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>) and the author (Herbert). Unauthorized commercial use is prohibited.</p>
+                                    <p>All articles in this series are original works by <strong>Herbert</strong>, organized around personal study notes of the Constellation paper, the Constellation GitHub project, the official documentation, and the Chipyard framework. Reproduction or redistribution in any form must clearly attribute the source (<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>) and the author (Herbert). Unauthorized commercial use is prohibited.</p>
                                     <div class="decl-zh">
                                         <h5>原创声明</h5>
-                                        <p>本系列所有文章均为 <strong>Herbert</strong> 原创作品。转载或引用请务必注明出处（<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>）及作者（Herbert）。未经授权，禁止用于任何商业用途。</p>
+                                        <p>本系列所有文章均为 <strong>Herbert</strong> 原创作品，围绕 Constellation 论文、GitHub 工程、官方文档及 Chipyard 框架的个人学习笔记整理而成。转载或引用请务必注明出处（<a href="https://hujian404.github.io/" target="_blank">https://hujian404.github.io/</a>）及作者（Herbert）。未经授权，禁止用于任何商业用途。</p>
                                     </div>
                                 </div>
 
@@ -134,16 +134,208 @@
                                 <div class="series-references">
                                     <h5>Primary References</h5>
                                     <ul>
-                                        <li><strong>Paper:</strong> <em>Constellation: An Open-Source SoC-Capable NoC Generator</em></li>
-                                        <li><strong>Source:</strong> UC Berkeley Architecture Research — <a href="https://github.com/ucb-bar/constellation" target="_blank">github.com/ucb-bar/constellation</a></li>
+                                        <li><strong>Paper:</strong> J. Zhao, A. Agrawal, B. Nikolic, K. Asanovic, <em>Constellation: An Open-Source SoC-Capable NoC Generator</em>, IEEE/ACM NoCArc 2022. DOI: <a href="https://doi.org/10.1109/NoCArc57472.2022.9911299" target="_blank">10.1109/NoCArc57472.2022.9911299</a></li>
+                                        <li><strong>Upstream source:</strong> UC Berkeley Architecture Research — <a href="https://github.com/ucb-bar/constellation" target="_blank">github.com/ucb-bar/constellation</a></li>
+                                        <li><strong>SoC framework:</strong> Chipyard — <a href="https://github.com/ucb-bar/chipyard" target="_blank">github.com/ucb-bar/chipyard</a></li>
+                                        <li><strong>Working fork:</strong> Herbert's Constellation fork (experiments) — <a href="https://github.com/hujian404/constellation" target="_blank">github.com/hujian404/constellation</a></li>
                                     </ul>
                                 </div>
 
-                                <!-- Coming soon -->
-                                <div class="coming-soon">
-                                    <div class="cs-icon"><i class="fa fa-wrench"></i></div>
-                                    <h4>Coming Soon</h4>
-                                    <p>This column is being planned. The chapter outline and the first notes will be published once the framework is ready. In the meantime, you can follow the reference repository above or check back on the <a href="series.html">series page</a>.</p>
+                                <!-- Chapter listing -->
+                                <div class="chapter-list">
+
+                                    <!-- Part 0 -->
+                                    <div class="chapter-part">
+                                        <h5>Part 0 · Series Guide</h5>
+                                        <div class="part-desc">Roadmap, learning objectives, and the paper ↔ documentation ↔ source-code viewpoint adopted throughout the series.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">00</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=00-series-guide.md" target="_blank">Series Guide — From Paper, Source Code to Experiments</a>
+                                            <div class="ch-status done">Published</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Part 1 -->
+                                    <div class="chapter-part">
+                                        <h5>Part I · Understanding Constellation</h5>
+                                        <div class="part-desc">Why Constellation exists, what the paper proposes, and how the GitHub project is organized.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 1</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=01-why-constellation.md" target="_blank">Why Constellation?</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 2</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=02-paper-design-goals.md" target="_blank">Paper Close Reading — Design Goals and Core Ideas</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 3</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=03-constellation-architecture.md" target="_blank">Constellation Overall Architecture</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 4</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=04-github-source-code-guide.md" target="_blank">GitHub Project Structure and Source Reading Method</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Part 2 -->
+                                    <div class="chapter-part">
+                                        <h5>Part II · NoC Generator</h5>
+                                        <div class="part-desc">The core abstractions: specification, topology, channel/VC/terminal, flow, routing, and the path from Scala configuration to Verilog RTL.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 5</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=05-noc-specification.md" target="_blank">NoC Specification and NoCParams</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 6</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=06-topology.md" target="_blank">Topology — From Mesh to Arbitrary Directed Graphs</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 7</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=07-channel-virtual-channel-terminal.md" target="_blank">Channel, Virtual Channel and Terminal</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 8</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=08-flow-virtual-subnetwork.md" target="_blank">Flow and Virtual Subnetwork</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 9</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=09-routing-relation.md" target="_blank">Routing Relation and Routing Table</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 10</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=10-configuration-to-rtl.md" target="_blank">From Scala Configuration to Verilog RTL</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Part 3 -->
+                                    <div class="chapter-part">
+                                        <h5>Part III · Router, Flow Control &amp; Protocol</h5>
+                                        <div class="part-desc">From generator abstractions into hardware microarchitecture, and from a standalone NoC to a SoC interconnect.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 11</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=11-router-microarchitecture.md" target="_blank">Constellation Router Microarchitecture</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 12</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=12-wormhole-credit-flow-control.md" target="_blank">Wormhole Switching and Credit-Based Flow Control</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 13</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=13-virtual-channel-deadlock.md" target="_blank">Virtual Channel and Deadlock Avoidance</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 14</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=14-vc-allocation-arbitration-pipeline.md" target="_blank">VC Allocation, Arbitration and Pipeline</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 15</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=15-tilelink-axi4-protocol.md" target="_blank">TileLink / AXI4 Protocol Support</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 16</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=16-chipyard-integration.md" target="_blank">Chipyard / RocketChip Integration</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Part 4 -->
+                                    <div class="chapter-part">
+                                        <h5>Part IV · Evaluation</h5>
+                                        <div class="part-desc">Validating generated hardware and running reproducible NoC performance experiments.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 17</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=17-test-framework.md" target="_blank">Constellation Test Framework</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 18</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=18-netrace-traffic-evaluation.md" target="_blank">Netrace and Traffic Evaluation</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 19</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=19-noc-performance-evaluation.md" target="_blank">NoC Performance Evaluation Methodology</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 20</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=20-design-space-exploration.md" target="_blank">Experiment Design and Design Space Exploration</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Part 5 -->
+                                    <div class="chapter-part">
+                                        <h5>Part V · Research</h5>
+                                        <div class="part-desc">From learning Constellation to building your own NoC research prototype on top of it.</div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 21</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=21-custom-topology.md" target="_blank">Custom Topology</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 22</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=22-custom-routing.md" target="_blank">Custom Routing</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 23</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=23-vc-buffer-flow-control-experiments.md" target="_blank">VC, Buffer and Flow Control Experiments</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 24</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=24-router-microarchitecture-optimization.md" target="_blank">Router Microarchitecture Optimization</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="chapter-item">
+                                            <div class="ch-num">Ch. 25</div>
+                                            <a class="ch-title" href="note.html?s=constellation&f=25-from-constellation-to-noc-research.md" target="_blank">From Constellation to NoC Research</a>
+                                            <div class="ch-status">Draft</div>
+                                            <div class="ch-arrow"><i class="fa fa-arrow-right"></i></div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="series-back">

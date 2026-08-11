@@ -1,2 +1,37 @@
 论文：Constellation: An Open-Source SoC-Capable NoC Generator
 链接：https://github.com/ucb-bar/constellation/tree/c1b42cd0c7c7d6e4fc1ed9bf1f86fbd3b31ac510
+
+专栏结构：
+constellation-notes/
+│
+├── 00-series-guide.md
+│
+├── 01-why-constellation.md
+├── 02-paper-design-goals.md
+├── 03-constellation-architecture.md
+├── 04-github-source-code-guide.md
+│
+├── 05-noc-specification.md
+├── 06-topology.md
+├── 07-channel-virtual-channel-terminal.md
+├── 08-flow-virtual-subnetwork.md
+├── 09-routing-relation.md
+├── 10-configuration-to-rtl.md
+│
+├── 11-router-microarchitecture.md
+├── 12-wormhole-credit-flow-control.md
+├── 13-virtual-channel-deadlock.md
+├── 14-vc-allocation-arbitration-pipeline.md
+├── 15-tilelink-axi4-protocol.md
+├── 16-chipyard-integration.md
+│
+├── 17-test-framework.md
+├── 18-netrace-traffic-evaluation.md
+├── 19-noc-performance-evaluation.md
+├── 20-design-space-exploration.md
+│
+├── 21-custom-topology.md
+├── 22-custom-routing.md
+├── 23-vc-buffer-flow-control-experiments.md
+├── 24-router-microarchitecture-optimization.md
+└── 25-from-constellation-to-noc-research.md
