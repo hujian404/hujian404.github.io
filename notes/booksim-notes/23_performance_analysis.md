@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Simulation —— 仿真方法。
+
+---
+
+<a href="24_simulation.md">下一篇：Chapter 24 —— Simulation</a>

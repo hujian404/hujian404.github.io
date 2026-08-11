@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇进入 Part 5，从 Router Architecture 开始研究路由器微架构。
+
+---
+
+<a href="16_router_architecture.md">下一篇：Chapter 16 —— Router Architecture</a>

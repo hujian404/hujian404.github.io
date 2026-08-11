@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Slicing and Dicing —— 网络的分割与组合技术。
+
+---
+
+<a href="07_slicing_and_dicing.md">下一篇：Chapter 7 —— Slicing and Dicing</a>

@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇进入 Part 3，从 Routing Basics 开始研究路由算法。
+
+---
+
+<a href="08_routing_basics.md">下一篇：Chapter 8 —— Routing Basics</a>

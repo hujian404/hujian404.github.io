@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Error Control —— 差错控制机制。
+
+---
+
+<a href="21_error_control.md">下一篇：Chapter 21 —— Error Control</a>

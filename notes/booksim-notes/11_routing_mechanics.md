@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇进入 Part 4，从 Flow Control Basics 开始研究流控机制。
+
+---
+
+<a href="12_flow_control_basics.md">下一篇：Chapter 12 —— Flow Control Basics</a>

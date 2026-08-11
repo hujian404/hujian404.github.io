@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Deadlock and Livelock —— 死锁与活锁问题。
+
+---
+
+<a href="14_deadlock_and_livelock.md">下一篇：Chapter 14 —— Deadlock and Livelock</a>

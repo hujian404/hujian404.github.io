@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Router Datapath Components —— 路由器数据通路组件。
+
+---
+
+<a href="17_router_datapath_components.md">下一篇：Chapter 17 —— Router Datapath Components</a>

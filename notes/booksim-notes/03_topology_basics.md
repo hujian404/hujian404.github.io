@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Butterfly 网络的结构与特性。
+
+---
+
+<a href="04_butterfly_networks.md">下一篇：Chapter 4 —— Butterfly Networks</a>

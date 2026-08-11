@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Torus 网络的结构与特性。
+
+---
+
+<a href="05_torus_networks.md">下一篇：Chapter 5 —— Torus Networks</a>

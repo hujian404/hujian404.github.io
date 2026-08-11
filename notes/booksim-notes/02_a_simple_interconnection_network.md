@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将从 Topology 基础概念开始，进入网络拓扑结构的学习。
+
+---
+
+<a href="03_topology_basics.md">下一篇：Chapter 3 —— Topology Basics</a>

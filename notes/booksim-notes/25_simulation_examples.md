@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+本章是 BookSim 笔记系列的最终篇。至此，从 Chapter 1 的互连网络导论到 Chapter 25 的仿真示例，整个《Principles and Practices of Interconnection Networks》学习闭环已完成。
+
+---
+
+本系列到此结束。如需回顾，请返回 [BookSim 笔记专栏首页](../../booksim-series.html)。

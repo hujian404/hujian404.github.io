@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Arbitration —— 仲裁机制。
+
+---
+
+<a href="18_arbitration.md">下一篇：Chapter 18 —— Arbitration</a>

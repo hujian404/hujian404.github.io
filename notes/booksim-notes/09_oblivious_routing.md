@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Adaptive Routing —— 感知网络状态的自适应路由算法。
+
+---
+
+<a href="10_adaptive_routing.md">下一篇：Chapter 10 —— Adaptive Routing</a>

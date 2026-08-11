@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Non-blocking 网络的结构与特性。
+
+---
+
+<a href="06_non_blocking_networks.md">下一篇：Chapter 6 —— Non-blocking Networks</a>

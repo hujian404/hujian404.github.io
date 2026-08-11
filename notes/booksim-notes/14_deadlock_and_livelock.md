@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Quality of Service —— 服务质量保障机制。
+
+---
+
+<a href="15_quality_of_service.md">下一篇：Chapter 15 —— Quality of Service</a>

@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Buffered Flow Control —— 带缓冲的流控机制。
+
+---
+
+<a href="13_buffered_flow_control.md">下一篇：Chapter 13 —— Buffered Flow Control</a>

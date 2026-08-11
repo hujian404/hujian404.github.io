@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Oblivious Routing —— 不感知网络状态的路由算法。
+
+---
+
+<a href="09_oblivious_routing.md">下一篇：Chapter 9 —— Oblivious Routing</a>

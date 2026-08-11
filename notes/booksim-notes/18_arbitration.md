@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Allocation —— 分配算法。
+
+---
+
+<a href="19_allocation.md">下一篇：Chapter 19 —— Allocation</a>

@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Routing Mechanics —— 路由的具体实现机制。
+
+---
+
+<a href="11_routing_mechanics.md">下一篇：Chapter 11 —— Routing Mechanics</a>

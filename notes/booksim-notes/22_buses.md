@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇进入 Part 6，从 Performance Analysis 开始研究网络性能分析。
+
+---
+
+<a href="23_performance_analysis.md">下一篇：Chapter 23 —— Performance Analysis</a>

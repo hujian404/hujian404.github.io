@@ -23,3 +23,9 @@
 ## 本章总结
 
 ## 下一章预告
+
+下一篇将研究 Network Interfaces —— 网络接口。
+
+---
+
+<a href="20_network_interfaces.md">下一篇：Chapter 20 —— Network Interfaces</a>
