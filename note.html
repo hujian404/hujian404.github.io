@@ -7,6 +7,7 @@
 <meta name="author" content="Herbert">
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="js/vendor/highlight/github-dark.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
 
@@ -190,6 +191,8 @@
 
 <!-- Markdown renderer -->
 <script src="js/marked.min.js"></script>
+<script src="js/vendor/highlight/highlight.min.js"></script>
+<script src="js/vendor/highlight/scala.min.js"></script>
 
 <!--Google Map APi Key-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
@@ -271,6 +274,19 @@
             });
 
             contentEl.innerHTML = html;
+
+            // Highlight after the fetched Markdown is rendered. Only use explicit,
+            // supported fence languages; leave ASCII diagrams and unknown fences alone.
+            if (window.hljs) {
+                var codeBlocks = contentEl.querySelectorAll('pre code');
+                for (var j = 0; j < codeBlocks.length; j++) {
+                    var language = /\blanguage-([^\s]+)/.exec(codeBlocks[j].className);
+                    if (language && window.hljs.getLanguage(language[1])) {
+                        window.hljs.highlightElement(codeBlocks[j]);
+                    }
+                }
+            }
+
             loadingEl.style.display = 'none';
 
             // Style "next chapter" links: the last in-content <a> that points

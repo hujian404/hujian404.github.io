@@ -2216,6 +2216,11 @@ body.sidebar-hidden .card-outer .card-item {
 	border-radius: 0;
 }
 
+/* Keep one horizontal scrollbar on the existing pre wrapper after highlighting. */
+.md-content pre code.hljs {
+	overflow-x: visible;
+}
+
 .md-content table {
 	width: 100%;
 	border-collapse: collapse;
