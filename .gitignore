@@ -131,3 +131,4 @@ dist
 
 # Local reference books; do not publish full copyrighted PDFs
 notes/booksim-notes/ref/
+_site/

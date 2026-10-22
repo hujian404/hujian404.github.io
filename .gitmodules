@@ -1,0 +1,4 @@
+[submodule "resume"]
+	path = resume
+	url = https://github.com/hujian404/hujian.git
+	branch = master

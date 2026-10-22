@@ -22,10 +22,44 @@ python -m http.server 8000
 
 ## Deploy to GitHub Pages
 
-1. Push the code to the `main` branch root of your GitHub repository.
-2. For a user site, rename the repository to `<username>.github.io`.
-3. In the repository, go to **Settings → Pages**, set Source to the `main` branch and `/ (root)` directory, then save.
-4. Wait 1–2 minutes and visit `https://<username>.github.io`.
+1. Push the code to the `main` branch of your GitHub repository.
+2. In **Settings → Pages**, set Source to **GitHub Actions**.
+3. The **Sync resume and deploy blog** workflow publishes the static blog and builds the Jekyll resume at `/resume/`.
+4. Check the workflow's deployment result, then visit `https://hujian404.github.io/`.
+
+## Resume submodule and automatic updates
+
+The homepage's **Resume** section embeds the personal homepage from
+[`hujian404/hujian`](https://github.com/hujian404/hujian). It also links to the
+standalone homepage at `/resume/` and CV at `/resume/cv/`.
+The source is a Git submodule at `resume/`, tracking its `master` branch.
+The upstream content is currently the Academic Pages template; replace its
+sample profile and CV in that repository with your personal details.
+
+```bash
+git clone --recurse-submodules https://github.com/hujian404/hujian404.github.io.git
+# For an existing checkout:
+git submodule update --init --recursive
+# To pull the latest resume locally:
+git submodule update --remote resume
+```
+
+Edit and push resume content in `hujian404/hujian`. The blog workflow checks
+the tracked branch hourly (at minute 17 UTC), commits any new submodule revision,
+builds the resume with the correct blog URL and `/resume` base path, and deploys
+both sites in one Pages artifact. Pushes to the blog's `main` branch and manual
+**Actions → Sync resume and deploy blog → Run workflow** runs also synchronize.
+No personal access token or cross-repository secret is required for this public
+submodule. The workflow requests `contents: write` to record its revision.
+Scheduled GitHub Actions can be delayed; this is not instantaneous push syncing.
+GitHub may disable scheduled workflows after 60 days without repository activity;
+re-enable the workflow in Actions if necessary.
+
+The original Jekyll source and its configuration remain in the submodule. The
+blog only overrides the deployment URL and base path at build time. Future
+updates to profile text, CV, publications, styling, and assets therefore flow
+through from the resume repository. Local `python -m http.server` previews the
+static blog only; `/resume/` needs a Jekyll build (the workflow performs it).
 
 ## Directory structure
 
