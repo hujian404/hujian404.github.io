@@ -33,8 +33,9 @@ The homepage's **Resume** section embeds the personal homepage from
 [`hujian404/hujian`](https://github.com/hujian404/hujian). It also links to the
 standalone homepage at `/resume/` and CV at `/resume/cv/`.
 The source is a Git submodule at `resume/`, tracking its `master` branch.
-The upstream content is currently the Academic Pages template; replace its
-sample profile and CV in that repository with your personal details.
+The resume uses a shared bilingual profile in `_data/profile.yml`: Chinese at
+`/resume/` and English at `/resume/en/`, with corresponding CV routes. Use the
+中文 / English buttons to switch language while preserving the current section.
 
 ```bash
 git clone --recurse-submodules https://github.com/hujian404/hujian404.github.io.git

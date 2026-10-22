@@ -69,6 +69,11 @@ jobs:
           test -s "$GITHUB_WORKSPACE/_site/index.html"
           test -s "$GITHUB_WORKSPACE/_site/resume/index.html"
           test -s "$GITHUB_WORKSPACE/_site/resume/cv/index.html"
+          test -s "$GITHUB_WORKSPACE/_site/resume/en/index.html"
+          test -s "$GITHUB_WORKSPACE/_site/resume/en/cv/index.html"
+          grep -q 'lang="zh-CN"' "$GITHUB_WORKSPACE/_site/resume/index.html"
+          grep -q 'lang="en"' "$GITHUB_WORKSPACE/_site/resume/en/index.html"
+          grep -q 'Jian Hu' "$GITHUB_WORKSPACE/_site/resume/en/cv/index.html"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
