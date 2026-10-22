@@ -1,8 +1,26 @@
 # Constellation NoC 深入学习专栏：从论文、源码到实验
 
-> 本专栏围绕 University of California, Berkeley的 Constellation NoC Generator 展开，目标不是停留在“如何运行 Constellation”，而是从论文、设计抽象、GitHub 工程、Chisel/RTL 实现一直深入到 NoC 性能实验与二次开发，逐步建立对 Constellation 的系统理解，并最终将其作为后续 NoC 研究与实验的基础平台。
+> 本专栏围绕 University of California, Berkeley 的 Constellation NoC Generator 展开，目标不是停留在“如何运行 Constellation”，而是从论文、设计抽象、GitHub 工程、Chisel/RTL 实现一直深入到 NoC 性能实验与二次开发，逐步建立对 Constellation 的系统理解，并最终将其作为后续 NoC 研究与实验的基础平台。
 
 ---
+
+
+## 本轮更新与阅读约定（2026-10-22）
+
+01–25 章已从占位模板补为学习正文，保留原有五阶段顺序。每章包含源码入口、Scala / Chisel 用法拆解、NoC 设计约束和可执行的学习练习。05–10 章先建立规格与生成模型，11–14 章继续分析 router / credit / 仲裁，15–25 章进入协议、验证与研究实验。
+
+源码统一固定到 [`c1b42cd0c7c7d6e4fc1ed9bf1f86fbd3b31ac510`](https://github.com/ucb-bar/constellation/tree/c1b42cd0c7c7d6e4fc1ed9bf1f86fbd3b31ac510)。在线 latest 文档仅作辅助，复现时优先查同提交的 `docs/source`。文中的命令注明工作目录与前提，教学代码注明嵌入位置；本轮除了源码与静态内容核对，还在个人 fork 的既有 Chipyard 集成环境执行增量编译和四项代表性测试；版本、命令和结果见[实验复现附录](appendix-reproduction.md)。尚未新增全量回归、Netrace 应用实验、综合或物理时序分析。
+
+| 学习任务 | 优先阅读 | 需要留下的产物 |
+| --- | --- | --- |
+| 搭建最小网络 | 04–07、10、17 | 版本清单、两节点图、构建与功能日志 |
+| 理解路由和隔离 | 08–09、13、15 | 端口 / flow 表、VC 依赖图 |
+| 拆解 Chisel 硬件 | 10–14 | 模块连接、状态与逐拍事件表 |
+| 改拓扑或路由 | 21–22 | 边集合、路由规则、回归证据 |
+| 做性能对照 | 18–20、23–25 | 统计口径、配置、原始计数与结论边界 |
+
+配图按章节存放于 `pic/`，新增图同时保留 draw.io 源文件与 SVG。图是教学示意，新增工程图包含物理规格、router 通路与握手 / credit 时序；未执行的扩展实验仍与已验证结果分开标注。
+
 
 ## 1. 专栏简介
 
@@ -338,9 +356,9 @@ RTL
 
 # 6. 当前实验基础
 
-本专栏建立在一个已经完成环境验证的 Constellation fork 基础上。（仓库链接：https://github.com/hujian404/constellation）
+本专栏原有实验环境记录对应个人 Constellation fork。（仓库链接：https://github.com/hujian404/constellation）
 
-当前工程已经能够在远程服务器上完成构建和运行，并完成完整测试。
+本轮已核对实验 fork、父工程版本、工具链与历史回归日志，并新增执行四项代表性测试，均通过。历史 93/93 通过记录与本次四项验证分别列在[实验复现附录](appendix-reproduction.md)，并说明既有工作区差异和性能阈值调整的影响。
 
 当前实验环境中已经针对服务器环境进行了必要适配，包括：
 

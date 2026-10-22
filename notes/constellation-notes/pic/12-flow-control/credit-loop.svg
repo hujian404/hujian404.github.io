@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" role="img">
+<title>Credit 与 VC 所有权</title>
+<desc>一个 VC 的教学结构图：槽位许可与报文所有权分别管理。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52657a"/></marker></defs>
+<rect width="1040" height="440" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="25" y="40" font-size="25" font-weight="700" fill="#16324f">Credit 与 VC 所有权</text>
+<text x="25" y="70" font-size="15" fill="#52657a">一个 VC 的教学结构图：槽位许可与报文所有权分别管理。</text>
+<path d="M 320 130 L 380 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">发送</text>
+<path d="M 660 130 L 720 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">到达</text>
+<path d="M 860 185 L 860 285" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="872" y="235.0" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">等待 / 出队</text>
+<path d="M 720 352 L 660 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+<text x="690.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">资源返回</text>
+<path d="M 380 352 L 320 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+<text x="350.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">返回</text>
+<path d="M 180 285 L 180 185" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+<text x="192" y="235.0" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">下一轮许可</text>
+<rect x="40" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="180" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">上游 OutputUnit</text>
+<text x="180" y="159" text-anchor="middle" font-size="14" fill="#40566c">c &gt; 0 才有槽位许可</text>
+<rect x="380" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="520" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">前向 channel</text>
+<text x="520" y="159" text-anchor="middle" font-size="14" fill="#40566c">Valid flit · VC ID</text>
+<rect x="720" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="860" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">下游 InputBuffer</text>
+<text x="860" y="159" text-anchor="middle" font-size="14" fill="#40566c">接收并保存 flit</text>
+<rect x="720" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="860" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">下游转发 / 出队</text>
+<text x="860" y="349" text-anchor="middle" font-size="14" fill="#40566c">释放槽位；tail 相关释放</text>
+<rect x="380" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="520" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">反向回传</text>
+<text x="520" y="349" text-anchor="middle" font-size="14" fill="#40566c">credit_return / vc_free</text>
+<rect x="40" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="180" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">上游状态更新</text>
+<text x="180" y="349" text-anchor="middle" font-size="14" fill="#40566c">c 返还 · occupied 释放</text>
+<text x="25" y="422" font-size="12" fill="#64748b">Constellation 学习笔记 · 结构示意，非实测波形或物理布局</text>
+</g></svg>

@@ -1,0 +1,39 @@
+Constellation smoke verification — public, curated summary
+Date: 2026-10-22 (Asia/Shanghai)
+
+Reading baseline: ucb-bar/constellation c1b42cd0c7c7d6e4fc1ed9bf1f86fbd3b31ac510
+Runtime fork: hujian404/constellation e01ef4ab5ce3cab80431c420ce5d5fa3f67c3dd3
+Parent: hujian404/chipyard e27c6561c0066c1f60bf4eb4885a38391c850ac0
+Mode: Chipyard-integrated; CONSTELLATION_STANDALONE unset
+Workspace: existing local build adaptations and modified submodules present;
+not a clean-checkout reproduction claim.
+
+Resolved: Scala 2.13.16; Chisel 6.7.0; chiseltest 6.0.0
+JDK: Temurin 23.0.2+7; sbt 1.11.4
+Verilator: 5.046, v5.046-55-g1264184fb
+GNU C++ 11.4.0; GNU Make 4.3; CMake 3.22.1
+
+Command, relative to prepared Chipyard root:
+sbt -batch -no-colors 'project constellation' 'show scalaVersion' 'show libraryDependencies' compile 'testOnly constellation.NoCTest00 constellation.NoCTestTL00 constellation.NoCTestAXI400 constellation.NoCTestEval03'
+
+Incremental compile: [success] Total time: 2 s
+Test summary:
+[info] Total number of tests run: 4
+[info] Suites: completed 4, aborted 0
+[info] Tests: succeeded 4, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 18 s
+Process exit code: 0
+
+Eval03 reported:
+Min throughput: 2, 6, 0.97619
+Median latency: 28
+Max latency: 225
+Latency unit: cycles per flit, creation-to-ejection, includes ingress queue.
+Throughput field: received / sent window ratio, not flits per cycle.
+Maximum-latency acceptance: fork 250 cycles; upstream 210 cycles.
+The threshold change is not a hardware performance improvement.
+
+Scope: 4 representative suites, reused build state; no new full-suite run,
+no application trace campaign, no synthesis or post-layout timing analysis.
+This is a curated result summary, not the raw transcript.

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" role="img">
+<title>Topology：方向也是规格的一部分</title>
+<desc>每个箭头是一条有向物理 channel；上下两排是不同网络。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52657a"/></marker></defs>
+<rect width="1040" height="440" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="25" y="40" font-size="25" font-weight="700" fill="#16324f">Topology：方向也是规格的一部分</text>
+<text x="25" y="70" font-size="15" fill="#52657a">每个箭头是一条有向物理 channel；上下两排是不同网络。</text>
+<path d="M 320 130 L 380 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">0 → 1</text>
+<path d="M 660 130 L 720 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">1 → 2</text>
+<path d="M 320 320 L 380 320" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="310" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">0 → 1</text>
+<path d="M 380 352 L 320 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+<text x="350.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">1 → 0</text>
+<path d="M 660 320 L 720 320" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="310" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">1 → 2</text>
+<path d="M 720 352 L 660 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="6 4"/>
+<text x="690.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">2 → 1</text>
+<rect x="40" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="180" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 0</text>
+<text x="180" y="159" text-anchor="middle" font-size="14" fill="#40566c">单向链：入口所在节点</text>
+<rect x="380" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="520" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 1</text>
+<text x="520" y="159" text-anchor="middle" font-size="14" fill="#40566c">仅前向连接</text>
+<rect x="720" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="860" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 2</text>
+<text x="860" y="159" text-anchor="middle" font-size="14" fill="#40566c">出口所在节点</text>
+<rect x="40" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="180" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 0</text>
+<text x="180" y="349" text-anchor="middle" font-size="14" fill="#40566c">双向链：入口 / 出口</text>
+<rect x="380" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="520" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 1</text>
+<text x="520" y="349" text-anchor="middle" font-size="14" fill="#40566c">两个方向独立资源</text>
+<rect x="720" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="860" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Router 2</text>
+<text x="860" y="349" text-anchor="middle" font-size="14" fill="#40566c">双向链：入口 / 出口</text>
+<text x="25" y="422" font-size="12" fill="#64748b">Constellation 学习笔记 · 结构示意，非实测波形或物理布局</text>
+</g></svg>

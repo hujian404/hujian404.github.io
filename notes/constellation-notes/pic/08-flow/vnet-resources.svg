@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" role="img">
+<title>Flow、vNet 与 VC 资源</title>
+<desc>示例划分：逻辑资源隔离依赖路由规则，而不是标签本身。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52657a"/></marker></defs>
+<rect width="1040" height="440" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="25" y="40" font-size="25" font-weight="700" fill="#16324f">Flow、vNet 与 VC 资源</text>
+<text x="25" y="70" font-size="15" fill="#52657a">示例划分：逻辑资源隔离依赖路由规则，而不是标签本身。</text>
+<path d="M 320 130 L 380 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">映射</text>
+<path d="M 320 320 L 380 320" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="310" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">映射</text>
+<path d="M 660 130 L 720 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">传输</text>
+<path d="M 520 285 L 520 235.0 L 785 235.0 L 785 185" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="652.5" y="225.0" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">共享物理带宽</text>
+<path d="M 860 185 L 860 285" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="872" y="235.0" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">到达</text>
+<rect x="40" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="180" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">请求 Flow</text>
+<text x="180" y="159" text-anchor="middle" font-size="14" fill="#40566c">terminal 对 + vNet 0</text>
+<rect x="380" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="520" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">VC 集 A</text>
+<text x="520" y="159" text-anchor="middle" font-size="14" fill="#40566c">请求的合法候选资源</text>
+<rect x="720" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="860" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">同一物理链路</text>
+<text x="860" y="159" text-anchor="middle" font-size="14" fill="#40566c">A / B 共享传输带宽</text>
+<rect x="40" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="180" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">响应 Flow</text>
+<text x="180" y="349" text-anchor="middle" font-size="14" fill="#40566c">terminal 对 + vNet 1</text>
+<rect x="380" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="520" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">VC 集 B</text>
+<text x="520" y="349" text-anchor="middle" font-size="14" fill="#40566c">响应保留的前进路径</text>
+<rect x="720" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="860" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">目的端与协议</text>
+<text x="860" y="349" text-anchor="middle" font-size="14" fill="#40566c">恢复消息 · 返还资源</text>
+<text x="25" y="422" font-size="12" fill="#64748b">Constellation 学习笔记 · 结构示意，非实测波形或物理布局</text>
+</g></svg>

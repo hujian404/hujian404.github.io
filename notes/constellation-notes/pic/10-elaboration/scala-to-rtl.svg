@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="440" viewBox="0 0 1040 440" role="img">
+<title>Scala → Chisel → RTL</title>
+<desc>上排执行生成过程；下排是生成后的电路与验证。</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52657a"/></marker></defs>
+<rect width="1040" height="440" fill="#ffffff"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
+<text x="25" y="40" font-size="25" font-weight="700" fill="#16324f">Scala → Chisel → RTL</text>
+<text x="25" y="70" font-size="15" fill="#52657a">上排执行生成过程；下排是生成后的电路与验证。</text>
+<path d="M 320 130 L 380 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">求值</text>
+<path d="M 660 130 L 720 130" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="120" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">实例化</text>
+<path d="M 860 185 L 860 285" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="872" y="235.0" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">编译</text>
+<path d="M 720 352 L 660 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="690.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">构建</text>
+<path d="M 380 352 L 320 352" fill="none" stroke="#52657a" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="350.0" y="371" text-anchor="middle" font-size="12" fill="#40566c" stroke="white" stroke-width="4" paint-order="stroke">观察</text>
+<rect x="40" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="180" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Scala 配置</text>
+<text x="180" y="159" text-anchor="middle" font-size="14" fill="#40566c">case class / Seq / function</text>
+<rect x="380" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="520" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">参数与连接图</text>
+<text x="520" y="159" text-anchor="middle" font-size="14" fill="#40566c">require / LazyModule / node</text>
+<rect x="720" y="95" width="280" height="90" rx="10" fill="#e8f1ff" stroke="#9bb4cd"/>
+<text x="860" y="131" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">Chisel elaboration</text>
+<text x="860" y="159" text-anchor="middle" font-size="14" fill="#40566c">Module / Wire / Reg / IO</text>
+<rect x="720" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="860" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">FIRRTL / RTL</text>
+<text x="860" y="349" text-anchor="middle" font-size="14" fill="#40566c">编译、优化、输出 Verilog</text>
+<rect x="380" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="520" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">RTL Simulation</text>
+<text x="520" y="349" text-anchor="middle" font-size="14" fill="#40566c">时钟 · 状态更新 · 断言</text>
+<rect x="40" y="285" width="280" height="90" rx="10" fill="#e6f5ee" stroke="#9bb4cd"/>
+<text x="180" y="321" text-anchor="middle" font-size="18" font-weight="600" fill="#16324f">波形与计数</text>
+<text x="180" y="349" text-anchor="middle" font-size="14" fill="#40566c">核对行为 · 分析性能</text>
+<text x="25" y="422" font-size="12" fill="#64748b">Constellation 学习笔记 · 结构示意，非实测波形或物理布局</text>
+</g></svg>
