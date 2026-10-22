@@ -62,8 +62,9 @@ jobs:
           BLOG_BASE_PATH: ${{ steps.pages.outputs.base_path }}
         shell: bash
         run: |
+          ruby -ryaml -e 'File.write(ARGV[0], {"url" => ENV.fetch("BLOG_ORIGIN"), "baseurl" => "#{ENV.fetch("BLOG_BASE_PATH")}/resume"}.to_yaml)' "$RUNNER_TEMP/resume-blog.yml"
           bundle exec jekyll build --strict_front_matter \
-            --url "$BLOG_ORIGIN" --baseurl "${BLOG_BASE_PATH}/resume" \
+            --config "_config.yml,$RUNNER_TEMP/resume-blog.yml" \
             --destination "$GITHUB_WORKSPACE/_site/resume"
           test -s "$GITHUB_WORKSPACE/_site/index.html"
           test -s "$GITHUB_WORKSPACE/_site/resume/index.html"
