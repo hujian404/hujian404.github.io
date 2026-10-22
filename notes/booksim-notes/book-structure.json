@@ -1,0 +1,1641 @@
+{
+  "book": "Principles and Practices of Interconnection Networks",
+  "authors": [
+    "William J. Dally",
+    "Brian Towles"
+  ],
+  "year": 2004,
+  "pdfPageOffset": 27,
+  "chapters": [
+    {
+      "number": 1,
+      "sections": [
+        {
+          "id": "1.1",
+          "title": "Three Questions About Interconnection Networks",
+          "page": 2
+        },
+        {
+          "id": "1.2",
+          "title": "Uses of Interconnection Networks",
+          "page": 4
+        },
+        {
+          "id": "1.2.1",
+          "title": "Processor-Memory Interconnect",
+          "page": 5
+        },
+        {
+          "id": "1.2.2",
+          "title": "I/O Interconnect",
+          "page": 8
+        },
+        {
+          "id": "1.2.3",
+          "title": "Packet Switching Fabric",
+          "page": 11
+        },
+        {
+          "id": "1.3",
+          "title": "Network Basics",
+          "page": 13
+        },
+        {
+          "id": "1.3.1",
+          "title": "Topology",
+          "page": 13
+        },
+        {
+          "id": "1.3.2",
+          "title": "Routing",
+          "page": 16
+        },
+        {
+          "id": "1.3.3",
+          "title": "Flow Control",
+          "page": 17
+        },
+        {
+          "id": "1.3.4",
+          "title": "Router Architecture",
+          "page": 19
+        },
+        {
+          "id": "1.3.5",
+          "title": "Performance of Interconnection Networks",
+          "page": 19
+        },
+        {
+          "id": "1.4",
+          "title": "History",
+          "page": 21
+        },
+        {
+          "id": "1.5",
+          "title": "Organization of this Book",
+          "page": 23
+        }
+      ],
+      "title": "Introduction to Interconnection Networks",
+      "page": 1,
+      "file": "01_introduction_to_interconnection_networks.md"
+    },
+    {
+      "number": 2,
+      "sections": [
+        {
+          "id": "2.1",
+          "title": "Network Specifications and Constraints",
+          "page": 25
+        },
+        {
+          "id": "2.2",
+          "title": "Topology",
+          "page": 27
+        },
+        {
+          "id": "2.3",
+          "title": "Routing",
+          "page": 31
+        },
+        {
+          "id": "2.4",
+          "title": "Flow Control",
+          "page": 32
+        },
+        {
+          "id": "2.5",
+          "title": "Router Design",
+          "page": 33
+        },
+        {
+          "id": "2.6",
+          "title": "Performance Analysis",
+          "page": 36
+        },
+        {
+          "id": "2.7",
+          "title": "Exercises",
+          "page": 42
+        }
+      ],
+      "title": "A Simple Interconnection Network",
+      "page": 25,
+      "file": "02_a_simple_interconnection_network.md"
+    },
+    {
+      "number": 3,
+      "sections": [
+        {
+          "id": "3.1",
+          "title": "Nomenclature",
+          "page": 46
+        },
+        {
+          "id": "3.1.1",
+          "title": "Channels and Nodes",
+          "page": 46
+        },
+        {
+          "id": "3.1.2",
+          "title": "Direct and Indirect Networks",
+          "page": 47
+        },
+        {
+          "id": "3.1.3",
+          "title": "Cuts and Bisections",
+          "page": 48
+        },
+        {
+          "id": "3.1.4",
+          "title": "Paths",
+          "page": 48
+        },
+        {
+          "id": "3.1.5",
+          "title": "Symmetry",
+          "page": 49
+        },
+        {
+          "id": "3.2",
+          "title": "Traffic Patterns",
+          "page": 50
+        },
+        {
+          "id": "3.3",
+          "title": "Performance",
+          "page": 51
+        },
+        {
+          "id": "3.3.1",
+          "title": "Throughput and Maximum Channel Load",
+          "page": 51
+        },
+        {
+          "id": "3.3.2",
+          "title": "Latency",
+          "page": 55
+        },
+        {
+          "id": "3.3.3",
+          "title": "Path Diversity",
+          "page": 57
+        },
+        {
+          "id": "3.4",
+          "title": "Packaging Cost",
+          "page": 60
+        },
+        {
+          "id": "3.5",
+          "title": "Case Study: The SGI Origin 2000",
+          "page": 64
+        },
+        {
+          "id": "3.6",
+          "title": "Bibliographic Notes",
+          "page": 69
+        },
+        {
+          "id": "3.7",
+          "title": "Exercises",
+          "page": 69
+        }
+      ],
+      "title": "Topology Basics",
+      "page": 45,
+      "file": "03_topology_basics.md"
+    },
+    {
+      "number": 4,
+      "sections": [
+        {
+          "id": "4.1",
+          "title": "The Structure of Butterfly Networks",
+          "page": 75
+        },
+        {
+          "id": "4.2",
+          "title": "Isomorphic Butterflies",
+          "page": 77
+        },
+        {
+          "id": "4.3",
+          "title": "Performance and Packaging Cost",
+          "page": 78
+        },
+        {
+          "id": "4.4",
+          "title": "Path Diversity and Extra Stages",
+          "page": 81
+        },
+        {
+          "id": "4.5",
+          "title": "Case Study: The BBN Butterfly",
+          "page": 84
+        },
+        {
+          "id": "4.6",
+          "title": "Bibliographic Notes",
+          "page": 86
+        },
+        {
+          "id": "4.7",
+          "title": "Exercises",
+          "page": 86
+        }
+      ],
+      "title": "Butterfly Networks",
+      "page": 75,
+      "file": "04_butterfly_networks.md"
+    },
+    {
+      "number": 5,
+      "sections": [
+        {
+          "id": "5.1",
+          "title": "The Structure of Torus Networks",
+          "page": 90
+        },
+        {
+          "id": "5.2",
+          "title": "Performance",
+          "page": 92
+        },
+        {
+          "id": "5.2.1",
+          "title": "Throughput",
+          "page": 92
+        },
+        {
+          "id": "5.2.2",
+          "title": "Latency",
+          "page": 95
+        },
+        {
+          "id": "5.2.3",
+          "title": "Path Diversity",
+          "page": 96
+        },
+        {
+          "id": "5.3",
+          "title": "Building Mesh and Torus Networks",
+          "page": 98
+        },
+        {
+          "id": "5.4",
+          "title": "Express Cubes",
+          "page": 100
+        },
+        {
+          "id": "5.5",
+          "title": "Case Study: The MIT J-Machine",
+          "page": 102
+        },
+        {
+          "id": "5.6",
+          "title": "Bibliographic Notes",
+          "page": 106
+        },
+        {
+          "id": "5.7",
+          "title": "Exercises",
+          "page": 107
+        }
+      ],
+      "title": "Torus Networks",
+      "page": 89,
+      "file": "05_torus_networks.md"
+    },
+    {
+      "number": 6,
+      "sections": [
+        {
+          "id": "6.1",
+          "title": "Non-Blocking vs. Non-Interfering Networks",
+          "page": 112
+        },
+        {
+          "id": "6.2",
+          "title": "Crossbar Networks",
+          "page": 112
+        },
+        {
+          "id": "6.3",
+          "title": "Clos Networks",
+          "page": 116
+        },
+        {
+          "id": "6.3.1",
+          "title": "Structure and Properties of Clos Networks",
+          "page": 116
+        },
+        {
+          "id": "6.3.2",
+          "title": "Unicast Routing on Strictly Non-Blocking Clos Networks",
+          "page": 118
+        },
+        {
+          "id": "6.3.3",
+          "title": "Unicast Routing on Rearrangeable Clos Networks",
+          "page": 122
+        },
+        {
+          "id": "6.3.4",
+          "title": "Routing Clos Networks Using Matrix Decomposition",
+          "page": 126
+        },
+        {
+          "id": "6.3.5",
+          "title": "Multicast Routing on Clos Networks",
+          "page": 128
+        },
+        {
+          "id": "6.3.6",
+          "title": "Clos Networks with More Than Three Stages",
+          "page": 133
+        },
+        {
+          "id": "6.4",
+          "title": "Beneˇs Networks",
+          "page": 134
+        },
+        {
+          "id": "6.5",
+          "title": "Sorting Networks",
+          "page": 135
+        },
+        {
+          "id": "6.6",
+          "title": "Case Study: The Velio VC2002 (Zeus) Grooming Switch",
+          "page": 137
+        },
+        {
+          "id": "6.7",
+          "title": "Bibliographic Notes",
+          "page": 142
+        },
+        {
+          "id": "6.8",
+          "title": "Exercises",
+          "page": 142
+        }
+      ],
+      "title": "Non-Blocking Networks",
+      "page": 111,
+      "file": "06_non_blocking_networks.md"
+    },
+    {
+      "number": 7,
+      "sections": [
+        {
+          "id": "7.1",
+          "title": "Concentrators and Distributors",
+          "page": 146
+        },
+        {
+          "id": "7.1.1",
+          "title": "Concentrators",
+          "page": 146
+        },
+        {
+          "id": "7.1.2",
+          "title": "Distributors",
+          "page": 148
+        },
+        {
+          "id": "7.2",
+          "title": "Slicing and Dicing",
+          "page": 149
+        },
+        {
+          "id": "7.2.1",
+          "title": "Bit Slicing",
+          "page": 149
+        },
+        {
+          "id": "7.2.2",
+          "title": "Dimension Slicing",
+          "page": 151
+        },
+        {
+          "id": "7.2.3",
+          "title": "Channel Slicing",
+          "page": 152
+        },
+        {
+          "id": "7.3",
+          "title": "Slicing Multistage Networks",
+          "page": 153
+        },
+        {
+          "id": "7.4",
+          "title": "Case Study: Bit Slicing in the Tiny Tera",
+          "page": 155
+        },
+        {
+          "id": "7.5",
+          "title": "Bibliographic Notes",
+          "page": 157
+        },
+        {
+          "id": "7.6",
+          "title": "Exercises",
+          "page": 157
+        }
+      ],
+      "title": "Slicing and Dicing",
+      "page": 145,
+      "file": "07_slicing_and_dicing.md"
+    },
+    {
+      "number": 8,
+      "sections": [
+        {
+          "id": "8.1",
+          "title": "A Routing Example",
+          "page": 160
+        },
+        {
+          "id": "8.2",
+          "title": "Taxonomy of Routing Algorithms",
+          "page": 162
+        },
+        {
+          "id": "8.3",
+          "title": "The Routing Relation",
+          "page": 163
+        },
+        {
+          "id": "8.4",
+          "title": "Deterministic Routing",
+          "page": 164
+        },
+        {
+          "id": "8.4.1",
+          "title": "Destination-Tag Routing in Butterfly Networks",
+          "page": 165
+        },
+        {
+          "id": "8.4.2",
+          "title": "Dimension-Order Routing in Cube Networks",
+          "page": 166
+        },
+        {
+          "id": "8.5",
+          "title": "Case Study: Dimension-Order Routing in the Cray T3D",
+          "page": 168
+        },
+        {
+          "id": "8.6",
+          "title": "Bibliographic Notes",
+          "page": 170
+        },
+        {
+          "id": "8.7",
+          "title": "Exercises",
+          "page": 171
+        }
+      ],
+      "title": "Routing Basics",
+      "page": 159,
+      "file": "08_routing_basics.md"
+    },
+    {
+      "number": 9,
+      "sections": [
+        {
+          "id": "9.1",
+          "title": "Valiant’s Randomized Routing Algorithm",
+          "page": 174
+        },
+        {
+          "id": "9.1.1",
+          "title": "Valiant’s Algorithm on Torus Topologies",
+          "page": 174
+        },
+        {
+          "id": "9.1.2",
+          "title": "Valiant’s Algorithm on Indirect Networks",
+          "page": 175
+        },
+        {
+          "id": "9.2",
+          "title": "Minimal Oblivious Routing",
+          "page": 176
+        },
+        {
+          "id": "9.2.1",
+          "title": "Minimal Oblivious Routing on a Folded Clos (Fat Tree)",
+          "page": 176
+        },
+        {
+          "id": "9.2.2",
+          "title": "Minimal Oblivious Routing on a Torus",
+          "page": 178
+        },
+        {
+          "id": "9.3",
+          "title": "Load-Balanced Oblivious Routing",
+          "page": 180
+        },
+        {
+          "id": "9.4",
+          "title": "Analysis of Oblivious Routing",
+          "page": 180
+        },
+        {
+          "id": "9.5",
+          "title": "Case Study: Oblivious Routing in the Avici Terabit Switch Router(TSR)",
+          "page": 183
+        },
+        {
+          "id": "9.6",
+          "title": "Bibliographic Notes",
+          "page": 186
+        },
+        {
+          "id": "9.7",
+          "title": "Exercises",
+          "page": 187
+        }
+      ],
+      "title": "Oblivious Routing",
+      "page": 173,
+      "file": "09_oblivious_routing.md"
+    },
+    {
+      "number": 10,
+      "sections": [
+        {
+          "id": "10.1",
+          "title": "Adaptive Routing Basics",
+          "page": 189
+        },
+        {
+          "id": "10.2",
+          "title": "Minimal Adaptive Routing",
+          "page": 192
+        },
+        {
+          "id": "10.3",
+          "title": "Fully Adaptive Routing",
+          "page": 193
+        },
+        {
+          "id": "10.4",
+          "title": "Load-Balanced Adaptive Routing",
+          "page": 195
+        },
+        {
+          "id": "10.5",
+          "title": "Search-Based Routing",
+          "page": 196
+        },
+        {
+          "id": "10.6",
+          "title": "Case Study: Adaptive Routing in the Thinking Machines CM-5",
+          "page": 196
+        },
+        {
+          "id": "10.7",
+          "title": "Bibliographic Notes",
+          "page": 201
+        },
+        {
+          "id": "10.8",
+          "title": "Exercises",
+          "page": 201
+        }
+      ],
+      "title": "Adaptive Routing",
+      "page": 189,
+      "file": "10_adaptive_routing.md"
+    },
+    {
+      "number": 11,
+      "sections": [
+        {
+          "id": "11.1",
+          "title": "Table-Based Routing",
+          "page": 203
+        },
+        {
+          "id": "11.1.1",
+          "title": "Source Routing",
+          "page": 204
+        },
+        {
+          "id": "11.1.2",
+          "title": "Node-Table Routing",
+          "page": 208
+        },
+        {
+          "id": "11.2",
+          "title": "Algorithmic Routing",
+          "page": 211
+        },
+        {
+          "id": "11.3",
+          "title": "Case Study: Oblivious Source Routing in the IBM Vulcan Network",
+          "page": 212
+        },
+        {
+          "id": "11.4",
+          "title": "Bibliographic Notes",
+          "page": 217
+        },
+        {
+          "id": "11.5",
+          "title": "Exercises",
+          "page": 217
+        }
+      ],
+      "title": "Routing Mechanics",
+      "page": 203,
+      "file": "11_routing_mechanics.md"
+    },
+    {
+      "number": 12,
+      "sections": [
+        {
+          "id": "12.1",
+          "title": "Resources and Allocation Units",
+          "page": 222
+        },
+        {
+          "id": "12.2",
+          "title": "Bufferless Flow Control",
+          "page": 225
+        },
+        {
+          "id": "12.3",
+          "title": "Circuit Switching",
+          "page": 228
+        },
+        {
+          "id": "12.4",
+          "title": "Bibliographic Notes",
+          "page": 230
+        },
+        {
+          "id": "12.5",
+          "title": "Exercises",
+          "page": 230
+        }
+      ],
+      "title": "Flow Control Basics",
+      "page": 221,
+      "file": "12_flow_control_basics.md"
+    },
+    {
+      "number": 13,
+      "sections": [
+        {
+          "id": "13.1",
+          "title": "Packet-Buffer Flow Control",
+          "page": 234
+        },
+        {
+          "id": "13.2",
+          "title": "Flit-Buffer Flow Control",
+          "page": 237
+        },
+        {
+          "id": "13.2.1",
+          "title": "Wormhole Flow Control",
+          "page": 237
+        },
+        {
+          "id": "13.2.2",
+          "title": "Virtual-Channel Flow Control",
+          "page": 239
+        },
+        {
+          "id": "13.3",
+          "title": "Buffer Management and Backpressure",
+          "page": 245
+        },
+        {
+          "id": "13.3.1",
+          "title": "Credit-Based Flow Control",
+          "page": 245
+        },
+        {
+          "id": "13.3.2",
+          "title": "On/Off Flow Control",
+          "page": 247
+        },
+        {
+          "id": "13.3.3",
+          "title": "Ack/Nack Flow Control",
+          "page": 249
+        },
+        {
+          "id": "13.4",
+          "title": "Flit-Reservation Flow Control",
+          "page": 251
+        },
+        {
+          "id": "13.4.1",
+          "title": "A Flit-Reservation Router",
+          "page": 252
+        },
+        {
+          "id": "13.4.2",
+          "title": "Output Scheduling",
+          "page": 253
+        },
+        {
+          "id": "13.4.3",
+          "title": "Input Scheduling",
+          "page": 255
+        },
+        {
+          "id": "13.5",
+          "title": "Bibliographic Notes",
+          "page": 256
+        },
+        {
+          "id": "13.6",
+          "title": "Exercises",
+          "page": 256
+        }
+      ],
+      "title": "Buffered Flow Control",
+      "page": 233,
+      "file": "13_buffered_flow_control.md"
+    },
+    {
+      "number": 14,
+      "sections": [
+        {
+          "id": "14.1",
+          "title": "Deadlock",
+          "page": 258
+        },
+        {
+          "id": "14.1.1",
+          "title": "Agents and Resources",
+          "page": 258
+        },
+        {
+          "id": "14.1.2",
+          "title": "Wait-For and Holds Relations",
+          "page": 259
+        },
+        {
+          "id": "14.1.3",
+          "title": "Resource Dependences",
+          "page": 260
+        },
+        {
+          "id": "14.1.4",
+          "title": "Some Examples",
+          "page": 260
+        },
+        {
+          "id": "14.1.5",
+          "title": "High-Level (Protocol) Deadlock",
+          "page": 262
+        },
+        {
+          "id": "14.2",
+          "title": "Deadlock Avoidance",
+          "page": 263
+        },
+        {
+          "id": "14.2.1",
+          "title": "Resource Classes",
+          "page": 263
+        },
+        {
+          "id": "14.2.2",
+          "title": "Restricted Physical Routes",
+          "page": 267
+        },
+        {
+          "id": "14.2.3",
+          "title": "Hybrid Deadlock Avoidance",
+          "page": 270
+        },
+        {
+          "id": "14.3",
+          "title": "Adaptive Routing",
+          "page": 272
+        },
+        {
+          "id": "14.3.1",
+          "title": "Routing Subfunctions and Extended Dependences",
+          "page": 272
+        },
+        {
+          "id": "14.3.2",
+          "title": "Duato’s Protocol for Deadlock-Free Adaptive Algorithms",
+          "page": 276
+        },
+        {
+          "id": "14.4",
+          "title": "Deadlock Recovery",
+          "page": 277
+        },
+        {
+          "id": "14.4.1",
+          "title": "Regressive Recovery",
+          "page": 278
+        },
+        {
+          "id": "14.4.2",
+          "title": "Progressive Recovery",
+          "page": 278
+        },
+        {
+          "id": "14.5",
+          "title": "Livelock",
+          "page": 279
+        },
+        {
+          "id": "14.6",
+          "title": "Case Study: Deadlock Avoidance in the Cray T3E",
+          "page": 279
+        },
+        {
+          "id": "14.7",
+          "title": "Bibliographic Notes",
+          "page": 281
+        },
+        {
+          "id": "14.8",
+          "title": "Exercises",
+          "page": 282
+        }
+      ],
+      "title": "Deadlock and Livelock",
+      "page": 257,
+      "file": "14_deadlock_and_livelock.md"
+    },
+    {
+      "number": 15,
+      "sections": [
+        {
+          "id": "15.1",
+          "title": "Service Classes and Service Contracts",
+          "page": 285
+        },
+        {
+          "id": "15.2",
+          "title": "Burstiness and Network Delays",
+          "page": 287
+        },
+        {
+          "id": "15.2.1",
+          "title": "(σ, ρ) Regulated Flows",
+          "page": 287
+        },
+        {
+          "id": "15.2.2",
+          "title": "Calculating Delays",
+          "page": 288
+        },
+        {
+          "id": "15.3",
+          "title": "Implementation of Guaranteed Services",
+          "page": 290
+        },
+        {
+          "id": "15.3.1",
+          "title": "Aggregate Resource Allocation",
+          "page": 291
+        },
+        {
+          "id": "15.3.2",
+          "title": "Resource Reservation",
+          "page": 292
+        },
+        {
+          "id": "15.4",
+          "title": "Implementation of Best-Effort Services",
+          "page": 294
+        },
+        {
+          "id": "15.4.1",
+          "title": "Latency Fairness",
+          "page": 294
+        },
+        {
+          "id": "15.4.2",
+          "title": "Throughput Fairness",
+          "page": 296
+        },
+        {
+          "id": "15.5",
+          "title": "Separation of Resources",
+          "page": 297
+        },
+        {
+          "id": "15.5.1",
+          "title": "Tree Saturation",
+          "page": 297
+        },
+        {
+          "id": "15.5.2",
+          "title": "Non-interfering Networks",
+          "page": 299
+        },
+        {
+          "id": "15.6",
+          "title": "Case Study: ATM Service Classes",
+          "page": 299
+        },
+        {
+          "id": "15.7",
+          "title": "Case Study: Virtual Networks in the Avici TSR",
+          "page": 300
+        },
+        {
+          "id": "15.8",
+          "title": "Bibliographic Notes",
+          "page": 302
+        },
+        {
+          "id": "15.9",
+          "title": "Exercises",
+          "page": 303
+        }
+      ],
+      "title": "Quality of Service",
+      "page": 285,
+      "file": "15_quality_of_service.md"
+    },
+    {
+      "number": 16,
+      "sections": [
+        {
+          "id": "16.1",
+          "title": "Basic Router Architecture",
+          "page": 305
+        },
+        {
+          "id": "16.1.1",
+          "title": "Block Diagram",
+          "page": 305
+        },
+        {
+          "id": "16.1.2",
+          "title": "The Router Pipeline",
+          "page": 308
+        },
+        {
+          "id": "16.2",
+          "title": "Stalls",
+          "page": 310
+        },
+        {
+          "id": "16.3",
+          "title": "Closing the Loop with Credits",
+          "page": 312
+        },
+        {
+          "id": "16.4",
+          "title": "Reallocating a Channel",
+          "page": 313
+        },
+        {
+          "id": "16.5",
+          "title": "Speculation and Lookahead",
+          "page": 316
+        },
+        {
+          "id": "16.6",
+          "title": "Flit and Credit Encoding",
+          "page": 319
+        },
+        {
+          "id": "16.7",
+          "title": "Case Study: The Alpha 21364 Router",
+          "page": 321
+        },
+        {
+          "id": "16.8",
+          "title": "Bibliographic Notes",
+          "page": 324
+        },
+        {
+          "id": "16.9",
+          "title": "Exercises",
+          "page": 324
+        }
+      ],
+      "title": "Router Architecture",
+      "page": 305,
+      "file": "16_router_architecture.md"
+    },
+    {
+      "number": 17,
+      "sections": [
+        {
+          "id": "17.1",
+          "title": "Input Buffer Organization",
+          "page": 325
+        },
+        {
+          "id": "17.1.1",
+          "title": "Buffer Partitioning",
+          "page": 326
+        },
+        {
+          "id": "17.1.2",
+          "title": "Input Buffer Data Structures",
+          "page": 328
+        },
+        {
+          "id": "17.1.3",
+          "title": "Input Buffer Allocation",
+          "page": 333
+        },
+        {
+          "id": "17.2",
+          "title": "Switches",
+          "page": 334
+        },
+        {
+          "id": "17.2.1",
+          "title": "Bus Switches",
+          "page": 335
+        },
+        {
+          "id": "17.2.2",
+          "title": "Crossbar Switches",
+          "page": 338
+        },
+        {
+          "id": "17.2.3",
+          "title": "Network Switches",
+          "page": 342
+        },
+        {
+          "id": "17.3",
+          "title": "Output Organization",
+          "page": 343
+        },
+        {
+          "id": "17.4",
+          "title": "Case Study: The Datapath of the IBM Colony Router",
+          "page": 344
+        },
+        {
+          "id": "17.5",
+          "title": "Bibliographic Notes",
+          "page": 347
+        },
+        {
+          "id": "17.6",
+          "title": "Exercises",
+          "page": 348
+        }
+      ],
+      "title": "Router Datapath Components",
+      "page": 325,
+      "file": "17_router_datapath_components.md"
+    },
+    {
+      "number": 18,
+      "sections": [
+        {
+          "id": "18.1",
+          "title": "Arbitration Timing",
+          "page": 349
+        },
+        {
+          "id": "18.2",
+          "title": "Fairness",
+          "page": 351
+        },
+        {
+          "id": "18.3",
+          "title": "Fixed Priority Arbiter",
+          "page": 352
+        },
+        {
+          "id": "18.4",
+          "title": "Variable Priority Iterative Arbiters",
+          "page": 354
+        },
+        {
+          "id": "18.4.1",
+          "title": "Oblivious Arbiters",
+          "page": 354
+        },
+        {
+          "id": "18.4.2",
+          "title": "Round-Robin Arbiter",
+          "page": 355
+        },
+        {
+          "id": "18.4.3",
+          "title": "Grant-Hold Circuit",
+          "page": 355
+        },
+        {
+          "id": "18.4.4",
+          "title": "Weighted Round-Robin Arbiter",
+          "page": 357
+        },
+        {
+          "id": "18.5",
+          "title": "Matrix Arbiter",
+          "page": 358
+        },
+        {
+          "id": "18.6",
+          "title": "Queuing Arbiter",
+          "page": 360
+        },
+        {
+          "id": "18.7",
+          "title": "Exercises",
+          "page": 362
+        }
+      ],
+      "title": "Arbitration",
+      "page": 349,
+      "file": "18_arbitration.md"
+    },
+    {
+      "number": 19,
+      "sections": [
+        {
+          "id": "19.1",
+          "title": "Representations",
+          "page": 363
+        },
+        {
+          "id": "19.2",
+          "title": "Exact Algorithms",
+          "page": 366
+        },
+        {
+          "id": "19.3",
+          "title": "Separable Allocators",
+          "page": 367
+        },
+        {
+          "id": "19.3.1",
+          "title": "Parallel Iterative Matching",
+          "page": 371
+        },
+        {
+          "id": "19.3.2",
+          "title": "iSLIP",
+          "page": 371
+        },
+        {
+          "id": "19.3.3",
+          "title": "Lonely Output Allocator",
+          "page": 372
+        },
+        {
+          "id": "19.4",
+          "title": "Wavefront Allocator",
+          "page": 373
+        },
+        {
+          "id": "19.5",
+          "title": "Incremental vs. Batch Allocation",
+          "page": 376
+        },
+        {
+          "id": "19.6",
+          "title": "Multistage Allocation",
+          "page": 378
+        },
+        {
+          "id": "19.7",
+          "title": "Performance of Allocators",
+          "page": 380
+        },
+        {
+          "id": "19.8",
+          "title": "Case Study: The Tiny Tera Allocator",
+          "page": 383
+        },
+        {
+          "id": "19.9",
+          "title": "Bibliographic Notes",
+          "page": 385
+        },
+        {
+          "id": "19.10",
+          "title": "Exercises",
+          "page": 386
+        }
+      ],
+      "title": "Allocation",
+      "page": 363,
+      "file": "19_allocation.md"
+    },
+    {
+      "number": 20,
+      "sections": [
+        {
+          "id": "20.1",
+          "title": "Processor-Network Interface",
+          "page": 390
+        },
+        {
+          "id": "20.1.1",
+          "title": "Two-Register Interface",
+          "page": 391
+        },
+        {
+          "id": "20.1.2",
+          "title": "Register-Mapped Interface",
+          "page": 392
+        },
+        {
+          "id": "20.1.3",
+          "title": "Descriptor-Based Interface",
+          "page": 393
+        },
+        {
+          "id": "20.1.4",
+          "title": "Message Reception",
+          "page": 393
+        },
+        {
+          "id": "20.2",
+          "title": "Shared-Memory Interface",
+          "page": 394
+        },
+        {
+          "id": "20.2.1",
+          "title": "Processor-Network Interface",
+          "page": 395
+        },
+        {
+          "id": "20.2.2",
+          "title": "Cache Coherence",
+          "page": 397
+        },
+        {
+          "id": "20.2.3",
+          "title": "Memory-Network Interface",
+          "page": 398
+        },
+        {
+          "id": "20.3",
+          "title": "Line-Fabric Interface",
+          "page": 400
+        },
+        {
+          "id": "20.4",
+          "title": "Case Study: The MIT M-Machine Network Interface",
+          "page": 403
+        },
+        {
+          "id": "20.5",
+          "title": "Bibliographic Notes",
+          "page": 407
+        },
+        {
+          "id": "20.6",
+          "title": "Exercises",
+          "page": 408
+        }
+      ],
+      "title": "Network Interfaces",
+      "page": 389,
+      "file": "20_network_interfaces.md"
+    },
+    {
+      "number": 21,
+      "sections": [
+        {
+          "id": "21.1",
+          "title": "Know Thy Enemy: Failure Modes and Fault Models",
+          "page": 411
+        },
+        {
+          "id": "21.2",
+          "title": "The Error Control Process: Detection, Containment, and Recovery",
+          "page": 414
+        },
+        {
+          "id": "21.3",
+          "title": "Link Level Error Control",
+          "page": 415
+        },
+        {
+          "id": "21.3.1",
+          "title": "Link Monitoring",
+          "page": 415
+        },
+        {
+          "id": "21.3.2",
+          "title": "Link-Level Retransmission",
+          "page": 416
+        },
+        {
+          "id": "21.3.3",
+          "title": "Channel Reconfiguration, Degradation, and Shutdown",
+          "page": 419
+        },
+        {
+          "id": "21.4",
+          "title": "Router Error Control",
+          "page": 421
+        },
+        {
+          "id": "21.5",
+          "title": "Network-Level Error Control",
+          "page": 422
+        },
+        {
+          "id": "21.6",
+          "title": "End-to-end Error Control",
+          "page": 423
+        },
+        {
+          "id": "21.7",
+          "title": "Bibliographic Notes",
+          "page": 423
+        },
+        {
+          "id": "21.8",
+          "title": "Exercises",
+          "page": 424
+        }
+      ],
+      "title": "Error Control",
+      "page": 411,
+      "file": "21_error_control.md"
+    },
+    {
+      "number": 22,
+      "sections": [
+        {
+          "id": "22.1",
+          "title": "Bus Basics",
+          "page": 428
+        },
+        {
+          "id": "22.2",
+          "title": "Bus Arbitration",
+          "page": 432
+        },
+        {
+          "id": "22.3",
+          "title": "High Performance Bus Protocol",
+          "page": 436
+        },
+        {
+          "id": "22.3.1",
+          "title": "Bus Pipelining",
+          "page": 436
+        },
+        {
+          "id": "22.3.2",
+          "title": "Split-Transaction Buses",
+          "page": 438
+        },
+        {
+          "id": "22.3.3",
+          "title": "Burst Messages",
+          "page": 439
+        },
+        {
+          "id": "22.4",
+          "title": "From Buses to Networks",
+          "page": 441
+        },
+        {
+          "id": "22.5",
+          "title": "Case Study: The PCI Bus",
+          "page": 443
+        },
+        {
+          "id": "22.6",
+          "title": "Bibliographic Notes",
+          "page": 446
+        },
+        {
+          "id": "22.7",
+          "title": "Exercises",
+          "page": 446
+        }
+      ],
+      "title": "Buses",
+      "page": 427,
+      "file": "22_buses.md"
+    },
+    {
+      "number": 23,
+      "sections": [
+        {
+          "id": "23.1",
+          "title": "Measures of Interconnection Network Performance",
+          "page": 449
+        },
+        {
+          "id": "23.1.1",
+          "title": "Throughput",
+          "page": 452
+        },
+        {
+          "id": "23.1.2",
+          "title": "Latency",
+          "page": 455
+        },
+        {
+          "id": "23.1.3",
+          "title": "Fault Tolerance",
+          "page": 456
+        },
+        {
+          "id": "23.1.4",
+          "title": "Common Measurement Pitfalls",
+          "page": 456
+        },
+        {
+          "id": "23.2",
+          "title": "Analysis",
+          "page": 460
+        },
+        {
+          "id": "23.2.1",
+          "title": "Queuing Theory",
+          "page": 461
+        },
+        {
+          "id": "23.2.2",
+          "title": "Probabilistic Analysis",
+          "page": 465
+        },
+        {
+          "id": "23.3",
+          "title": "Validation",
+          "page": 467
+        },
+        {
+          "id": "23.4",
+          "title": "Case Study: Efficiency and Loss in the BBN Monarch Network",
+          "page": 468
+        },
+        {
+          "id": "23.5",
+          "title": "Bibliographic Notes",
+          "page": 470
+        },
+        {
+          "id": "23.6",
+          "title": "Exercises",
+          "page": 471
+        }
+      ],
+      "title": "Performance Analysis",
+      "page": 449,
+      "file": "23_performance_analysis.md"
+    },
+    {
+      "number": 24,
+      "sections": [
+        {
+          "id": "24.1",
+          "title": "Levels of Detail",
+          "page": 473
+        },
+        {
+          "id": "24.2",
+          "title": "Network Workloads",
+          "page": 475
+        },
+        {
+          "id": "24.2.1",
+          "title": "Application-Driven Workloads",
+          "page": 475
+        },
+        {
+          "id": "24.2.2",
+          "title": "Synthetic Workloads",
+          "page": 476
+        },
+        {
+          "id": "24.3",
+          "title": "Simulation Measurements",
+          "page": 478
+        },
+        {
+          "id": "24.3.1",
+          "title": "Simulator Warm-Up",
+          "page": 479
+        },
+        {
+          "id": "24.3.2",
+          "title": "Steady-State Sampling",
+          "page": 481
+        },
+        {
+          "id": "24.3.3",
+          "title": "Confidence Intervals",
+          "page": 482
+        },
+        {
+          "id": "24.4",
+          "title": "Simulator Design",
+          "page": 484
+        },
+        {
+          "id": "24.4.1",
+          "title": "Simulation Approaches",
+          "page": 485
+        },
+        {
+          "id": "24.4.2",
+          "title": "Modeling Source Queues",
+          "page": 488
+        },
+        {
+          "id": "24.4.3",
+          "title": "Random Number Generation",
+          "page": 490
+        },
+        {
+          "id": "24.4.4",
+          "title": "Troubleshooting",
+          "page": 491
+        },
+        {
+          "id": "24.5",
+          "title": "Bibliographic Notes",
+          "page": 491
+        },
+        {
+          "id": "24.6",
+          "title": "Exercises",
+          "page": 492
+        }
+      ],
+      "title": "Simulation",
+      "page": 473,
+      "file": "24_simulation.md"
+    },
+    {
+      "number": 25,
+      "sections": [
+        {
+          "id": "25.1",
+          "title": "Routing",
+          "page": 495
+        },
+        {
+          "id": "25.1.1",
+          "title": "Latency",
+          "page": 496
+        },
+        {
+          "id": "25.1.2",
+          "title": "Throughput Distributions",
+          "page": 499
+        },
+        {
+          "id": "25.2",
+          "title": "Flow Control Performance",
+          "page": 500
+        },
+        {
+          "id": "25.2.1",
+          "title": "Virtual Channels",
+          "page": 500
+        },
+        {
+          "id": "25.2.2",
+          "title": "Network Size",
+          "page": 502
+        },
+        {
+          "id": "25.2.3",
+          "title": "Injection Processes",
+          "page": 503
+        },
+        {
+          "id": "25.2.4",
+          "title": "Prioritization",
+          "page": 505
+        },
+        {
+          "id": "25.2.5",
+          "title": "Stability",
+          "page": 507
+        },
+        {
+          "id": "25.3",
+          "title": "Fault Tolerance",
+          "page": 508
+        }
+      ],
+      "title": "Simulation Examples",
+      "page": 495,
+      "file": "25_simulation_examples.md"
+    }
+  ]
+}

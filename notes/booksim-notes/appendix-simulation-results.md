@@ -1,5 +1,11 @@
 # 实验附录｜BookSim2 最小配置验证
 
+这是本专栏追加的 2×2 Mesh smoke 实验，用于核对构建、配置和统计路径；不是原书第 2 章的 butterfly/dropping 网络，也不是第 25 章曲线的逐值复现。原书组织见[章节与页码对照](appendix-reading-map.md)。
+
+![BookSim2 对象和周期模型](pic/02-model/simulation-model.svg)
+
+*补充图：依据固定版本源码整理的软件对象关系；箭头不表示每个方框固定占一拍，也不表示 RTL 生成流程。*
+
 ## 1. 验证对象与环境
 
 本次在2026-10-22使用干净的上游源码归档，在独立临时目录构建；没有修改 BookSim 源码。源码基线为 [`28f43299f1706a3160ffac721ca461d74eb6e618`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)，构建命令为 `make -C src -j4`。

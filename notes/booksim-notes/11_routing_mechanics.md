@@ -1,22 +1,54 @@
-# Chapter 11｜Routing Mechanics｜路由表、计算与 lookahead
+# Chapter 11｜Routing Mechanics
 
-> 以《Principles and Practices of Interconnection Networks》的章节主题为学习顺序；本文为概念整理与固定版本源码解读，不是原书逐句翻译。BookSim2 基线：[`28f4329`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)。
+> 原书：William J. Dally、Brian Towles，*Principles and Practices of Interconnection Networks*（Morgan Kaufmann，2004），第 11 章，印刷页 203–220。本地参考 PDF 的页序为印刷页 +27。以下为中文学习整理，保留原书全部目录小节的编号与标题，不是逐句翻译。BookSim2 对照版本固定为 [`28f4329`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)。
 
-## 1. 算法相同，实现时序仍可能不同
+[专栏导读](00_Introduction.md) · [原书目录与页码对照](appendix-reading-map.md)
 
-同一 DOR 算法可以通过组合计算、表查询或提前计算实现。关键差别是输入信息、逻辑开销、计算位置和流水线边界。硬件中一个查表拍与软件模型中一次函数调用不是同一时间单位。
+## 11.1 Table-Based Routing
 
-在 BookSim 中，routing_delay 是建模的周期参数；函数调用在宿主机消耗多少 CPU 时间，不等于被模拟的 router 花了多少周期。
+*原书印刷页 203。*
 
-## 2. Lookahead 把下一跳信息提前准备
+routing mechanics 讨论路径选择如何编码和执行。表项宽度、查表次数、header 开销与更新方式会影响面积和延迟；算法上等价的路由不一定有相同实现成本。
 
-前一跳可以在发送 head 时准备下一 router 的路由信息，使接收方省去独立 RC 阶段。它需要知道下一跳输入位置和目标信息，还要保持候选信息与报文一致。routing_delay=0 因而不能简单解释为“路由逻辑在物理上零延迟”。
+### 11.1.1 Source Routing
 
-## 3. 追一条完整控制链
+*原书印刷页 204。*
 
-阅读顺序是 routing 注册键 → flit / VC 路由状态 → OutputSet → VA 请求。若使用 lookahead，还要追 `la_route_set` 的生成和消费。修改地址编码或端口编号时，应同时检查这些边界。
+source routing 把路径信息放在源端构造的 header 中，沿途消费。它减轻逐跳路径计算，却增加 header 长度，并要求拓扑变化时更新源端信息。
 
-## 4. BookSim 源码拆解
+### 11.1.2 Node-Table Routing
+
+*原书印刷页 208。*
+
+node-table routing 在每个节点按目的或标签查下一跳。表项可以随系统映射调整，但需要考虑分布式更新一致性与表的容量。
+
+## 11.2 Algorithmic Routing
+
+*原书印刷页 211。*
+
+algorithmic routing 由地址与当前节点状态计算方向，适合规则拓扑。BookSim 的 C++ routing function 是性能模型中的软件实现，其执行耗时不自动等于硬件 RC 延迟。
+
+## 11.3 Case Study: Oblivious Source Routing in the IBM Vulcan Network
+
+*原书印刷页 212。*
+
+IBM Vulcan 案例是 oblivious source routing。对照路径在何处计算、如何放入消息、沿途如何消费，才能理解它与逐跳 table routing 的差别。
+
+SP1/SP2 的 8×8 switch chip 受 source route 控制；原书介绍的端口除数据外还有 tag 与反向 token，前者标识有效 flit，后者返回流控 credit。八个芯片组成 32-port switch module，再按机器规模互连。路径编码解决“去哪”，token 解决“能否发”，这两个职责应在模型中分开。
+
+## 11.4 Bibliographic Notes
+
+*原书印刷页 217。*
+
+本节对应原书 p. 217 的文献脉络。继续查阅时应回到原书该节和书末 Bibliography，区分最初提出的方法、后续实现与本文使用的 BookSim2 版本。本文末尾源码链接是实现对照，不作为原书历史论述的替代依据。
+
+## 11.5 Exercises
+
+*原书印刷页 217。*
+
+自拟练习（不复制原书习题）：固定网络、VC 和负载，只比较 routing_delay=1 与0，核对路径不变时零负载时延发生什么变化。若实验涉及物理意义，再说明省略 RC 拍需要何种提前计算假设，不能只报告 simulator 更快的数值。
+
+## BookSim2 源码对照与适用边界
 
 固定版本节选（仅去除行末空白），省略外围上下文：[查看 src/routers/iq_router.cpp 第 76–82 行](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/routers/iq_router.cpp#L76-L82)。
 
@@ -32,21 +64,12 @@
 
 构造函数把算法名和拓扑拼成唯一键，从全局 map 获取函数指针；找不到会直接报错。后续 `_RouteEvaluate` / `_RouteUpdate` 分开实现时序，lookahead 信息保存在 Flit 的 `la_route_set`。读软件循环时要同时看计划完成时间，而非把函数先后顺序当作流水拍数。
 
-## 5. 学习练习与实验边界
+本章原书讨论的完整系统/电路机制超出该片段的模型范围。源码片段用于识别相近资源与接口；未实现的电路细节、服务保证或协议行为，不能由命名相似推定存在。
 
-固定网络、VC 和负载，只比较 routing_delay=1 与0，核对路径不变时零负载时延发生什么变化。若实验涉及物理意义，再说明省略 RC 拍需要何种提前计算假设，不能只报告 simulator 更快的数值。
+## 来源与继续阅读
 
-## 源码与阅读导航
+- 原书第 11 章，pp. 203–220；各节页码已逐项列出。案例与原书公式均以本地参考书为依据。
+- [BookSim2 固定版本源码](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)，节选保留[上游许可](/notes/booksim-notes/source-license.txt)。
+- [全书章节/源码路线与图片来源](appendix-reading-map.md)。新增图均附 `.drawio` 源文件，插图是结构说明，不是测量波形。
 
-- [src/routers/iq_router.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/routers/iq_router.cpp)
-- [src/flit.hpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/flit.hpp)
-- [src/routefunc.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/routefunc.cpp)
-- [src/vc.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/vc.cpp)
-
-源码节选版权归 Trustees of The Leland Stanford Junior University，保留[上游许可与免责声明](/notes/booksim-notes/source-license.txt)。新增架构图与算例为教学整理；未执行的方案不标作测量结果。
-
-[上一篇](10_adaptive_routing.md) · [专栏导读](00_Introduction.md)
-
----
-
-[下一篇：Chapter 12 — Flow Control Basics｜存储槽与发送许可](12_flow_control_basics.md)
+[上一篇](10_adaptive_routing.md) · [下一篇](12_flow_control_basics.md) · [专栏目录](/booksim-series.html)

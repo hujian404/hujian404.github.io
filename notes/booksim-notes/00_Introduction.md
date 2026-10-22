@@ -1,238 +1,59 @@
-# BookSim 学习笔记（0）——专栏介绍
-
-<p align="center">
-    <img src="pic/0/0_cover.png" width="420"/>
-</p>
-
-> **BookSim Notes**
->
-> 从《Principles and Practices of Interconnection Networks》出发，
-> 系统学习互连网络（Interconnection Network）理论，并结合 BookSim 源码理解现代 NoC 的设计与实现。
-
----
-
-# 为什么写这个专栏
-
-近年来，随着 NoC（Network-on-Chip）、Chiplet、AI Accelerator、高性能计算（HPC）等方向的发展，互连网络（Interconnection Network）已经成为计算机体系结构中不可或缺的一部分。
-
-对于很多刚接触这一领域的同学来说，学习过程通常会遇到几个问题：
-
-- 理论知识零散，缺乏系统性的学习路线；
-- 阅读论文时，大量涉及 Routing、Flow Control、Virtual Channel 等概念，却不了解其设计初衷；
-- 想阅读 BookSim 源码，却发现需要扎实的互连网络基础；
-- 能够运行仿真实验，却难以理解实验结果背后的设计原理。
-
-因此，我希望借助阅读 **《Principles and Practices of Interconnection Networks》** 这本经典教材，对互连网络相关知识进行系统梳理，并结合 BookSim 模拟器的实现，将理论知识与工程实践联系起来。
-
-本系列既是一份学习笔记，也是一次完整的源码阅读记录。
-
----
-
-# 为什么选择这本书
-
-《Principles and Practices of Interconnection Networks》由 William J. Dally 和 Brian Towles 编写，是互连网络领域最具代表性的教材之一。
-
-全书不仅介绍了互连网络设计的基本理论，同时也涵盖了大量经典案例（Case Study）、设计经验以及性能分析方法，其内容几乎覆盖了现代互连网络设计涉及的主要问题，包括：
-
-- 网络拓扑（Topology）
-- 路由算法（Routing）
-- 流量控制（Flow Control）
-- 路由器微架构（Router Architecture）
-- 仲裁与资源分配（Arbitration & Allocation）
-- 网络接口（Network Interface）
-- 性能分析（Performance Analysis）
-- 网络仿真（Simulation）
-
-全书共 **25 个章节**，按照知识依赖关系逐步展开，最终形成完整的互连网络知识体系。
-
----
-
-# 本专栏的目标
-
-整个系列不会逐句翻译原书，而是在尊重原书章节组织的基础上：
-
-- 梳理每一章的核心知识；
-- 补充必要的背景知识和推导过程；
-- 结合近年来 NoC 与片上互连的发展进行适当扩展；
-- 分析这些理论在 BookSim 中的具体实现。
-
-希望最终能够建立如下学习路径：
-
-```text
-教材理论
-      │
-      ▼
-理解设计思想
-      │
-      ▼
-BookSim源码实现
-      │
-      ▼
-网络性能分析
-      │
-      ▼
-开展自己的研究工作
-```
-
----
-
-# 本系列内容安排
-
-本系列将严格按照原书章节顺序进行整理，每一篇对应一个 Chapter。
-
-![1_outline](pic/1_outline.png)
-
-## Part 0：专栏介绍
-
-| 序号 | 文件名               | 内容             |
-| ---- | -------------------- | ---------------- |
-| 00   | `00_Introduction.md` | 专栏介绍（当前） |
-
----
-
-## Part 1：Introduction
-
-| Chapter   | 文件名                                           |
-| --------- | ------------------------------------------------ |
-| Chapter 1 | `01_introduction_to_interconnection_networks.md` |
-| Chapter 2 | `02_a_simple_interconnection_network.md`         |
-
-介绍互连网络的发展背景、应用场景以及一个简单互连网络的完整设计过程。
-
----
-
-## Part 2：Topology
-
-| Chapter   | 文件名                        |
-| --------- | ----------------------------- |
-| Chapter 3 | `03_topology_basics.md`       |
-| Chapter 4 | `04_butterfly_networks.md`    |
-| Chapter 5 | `05_torus_networks.md`        |
-| Chapter 6 | `06_non_blocking_networks.md` |
-| Chapter 7 | `07_slicing_and_dicing.md`    |
-
-重点讨论各种经典网络拓扑及其性能分析。
-
----
-
-## Part 3：Routing
-
-| Chapter    | 文件名                    |
-| ---------- | ------------------------- |
-| Chapter 8  | `08_routing_basics.md`    |
-| Chapter 9  | `09_oblivious_routing.md` |
-| Chapter 10 | `10_adaptive_routing.md`  |
-| Chapter 11 | `11_routing_mechanics.md` |
-
-介绍路由算法的基本思想及实现方式。
-
----
-
-## Part 4：Flow Control
-
-| Chapter    | 文件名                        |
-| ---------- | ----------------------------- |
-| Chapter 12 | `12_flow_control_basics.md`   |
-| Chapter 13 | `13_buffered_flow_control.md` |
-| Chapter 14 | `14_deadlock_and_livelock.md` |
-| Chapter 15 | `15_quality_of_service.md`    |
-
-重点介绍流量控制、虚拟通道、死锁避免及 QoS 等内容。
-
----
-
-## Part 5：Router Architecture
-
-| Chapter    | 文件名                             |
-| ---------- | ---------------------------------- |
-| Chapter 16 | `16_router_architecture.md`        |
-| Chapter 17 | `17_router_datapath_components.md` |
-| Chapter 18 | `18_arbitration.md`                |
-| Chapter 19 | `19_allocation.md`                 |
-| Chapter 20 | `20_network_interfaces.md`         |
-| Chapter 21 | `21_error_control.md`              |
-| Chapter 22 | `22_buses.md`                      |
-
-介绍现代路由器的微架构设计及网络接口实现。
-
----
-
-## Part 6：Performance & Simulation
-
-| Chapter    | 文件名                       |
-| ---------- | ---------------------------- |
-| Chapter 23 | `23_performance_analysis.md` |
-| Chapter 24 | `24_simulation.md`           |
-| Chapter 25 | `25_simulation_examples.md`  |
-
-学习如何评价互连网络性能，以及如何利用仿真验证设计方案。
-
----
-
-# 每篇文章的组织形式
-
-为了保持整个系列风格统一，每一篇文章均采用如下结构：
-
-```text
-本章导读
-
-1. 背景介绍
-2. 基本概念
-3. 核心原理
-4. 数学分析（必要时）
-5. 经典案例（Case Study）
-6. 与现代NoC的联系
-7. BookSim中的实现
-
-本章总结
-
-下一章预告
-```
-
-其中 **"BookSim中的实现"** 是本系列区别于教材阅读笔记的重要特色，将结合源码分析对应理论在 BookSim 中的实现方式。
-
----
-
-# 面向读者
-
-本系列适合以下读者：
-
-- 学习 Network-on-Chip（NoC）
-- 阅读 BookSim 源码
-- 从事互连网络相关科研
-- 学习计算机体系结构
-- 希望系统理解 Interconnection Network 的设计思想
-
-默认读者具有计算机组成原理或计算机体系结构的基础知识。
-
----
-
-# 源码基线与实践入口
-
-本专栏采用 [BookSim2 `28f4329`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618) 作为源码阅读基线。第2–25章按原规划补充概念、公式的适用条件、源码位置和练习；错误控制与bus章节明确区分理论与该版本未直接提供的模型。
-
-建议先读第2章建立最小模型，再按拓扑、路由、流控、router和统计顺序推进。第25章提供三份显式配置，运行证据见[验证摘要](appendix-simulation-results.md)。固定seed的小规模smoke只验证示例路径，不等于完整性能回归。
-
-新增图示按主题存放于 `pic/`，同时保留 `.drawio` 与SVG，供继续学习时编辑。
-
-# 阅读建议
-
-建议按照章节顺序阅读。
-
-虽然每一篇都尽量保持相对独立，但由于后续章节建立在前面章节的基础之上，因此按照原书顺序学习能够获得最佳阅读体验。
-
-对于已经具有一定基础的读者，也可以根据研究方向直接查阅对应章节。
-
----
-
-# 最后
-
-互连网络是一门兼具理论深度与工程实践价值的研究领域。
-
-本系列希望以《Principles and Practices of Interconnection Networks》为主线，在系统梳理互连网络理论的同时，结合 BookSim 模拟器的实现，逐步建立起从**基础概念**到**源码分析**再到**性能评估**的完整知识体系。
-
-希望这些学习笔记不仅能够帮助自己加深理解，也能够为后来者提供一份系统、易读且便于实践的参考资料。
-
----
-
-<a href="01_introduction_to_interconnection_networks.md">下一篇：Chapter 1 —— Introduction to Interconnection Networks</a>
+# BookSim Notes｜按原书章节阅读互连网络
+
+本专栏以 William J. Dally、Brian Towles 的 *Principles and Practices of Interconnection Networks*（Morgan Kaufmann，2004）为主线，严格保留全书 25 章及目录列出的所有小节编号、英文标题和顺序。中文内容是学习笔记，不是原书译本；每个小节标注印刷页码，方便回书核查。
+
+阅读一章时，先理解原书的问题与假设，再看章末固定版本 BookSim2 的源码。模拟器未实现的电路、协议、故障恢复和服务保证会明确说明，不能把几个同名配置项当成原书系统的完整复现。
+
+## 原书组织与阅读路径
+
+| 范围 | 原书内容 | 阅读产出 |
+|---|---|---|
+| 第 1–2 章 | 导论与完整小网络案例 | 从规格、封装到路由、流控和性能闭环 |
+| 第 3–7 章 | Topology | 图指标、路径多样性、非阻塞条件与实现成本 |
+| 第 8–11 章 | Routing | 路由关系、负载分布、路径选择与实现机制 |
+| 第 12–15 章 | Flow Control | 无缓冲/电路/有缓冲、前进性与服务契约 |
+| 第 16–22 章 | Router Architecture | 数据通路、仲裁、分配、接口、错误控制与总线 |
+| 第 23–25 章 | Performance | 分析假设、统计方法与原书仿真案例 |
+
+第 2 章是 **64×64、radix-4、三级 butterfly、dropping flow control**。第 12 章讲无缓冲和电路交换，credit 与 VC 在第 13 章展开。第 25 章按原书分别讨论 routing、flow control performance 和 fault tolerance；新增 2×2 Mesh 校验放在补充实验，避免改写原书案例。
+
+## 章节目录
+
+- [1. Introduction to Interconnection Networks](01_introduction_to_interconnection_networks.md)（p. 1）
+- [2. A Simple Interconnection Network](02_a_simple_interconnection_network.md)（p. 25）
+- [3. Topology Basics](03_topology_basics.md)（p. 45）
+- [4. Butterfly Networks](04_butterfly_networks.md)（p. 75）
+- [5. Torus Networks](05_torus_networks.md)（p. 89）
+- [6. Non-Blocking Networks](06_non_blocking_networks.md)（p. 111）
+- [7. Slicing and Dicing](07_slicing_and_dicing.md)（p. 145）
+- [8. Routing Basics](08_routing_basics.md)（p. 159）
+- [9. Oblivious Routing](09_oblivious_routing.md)（p. 173）
+- [10. Adaptive Routing](10_adaptive_routing.md)（p. 189）
+- [11. Routing Mechanics](11_routing_mechanics.md)（p. 203）
+- [12. Flow Control Basics](12_flow_control_basics.md)（p. 221）
+- [13. Buffered Flow Control](13_buffered_flow_control.md)（p. 233）
+- [14. Deadlock and Livelock](14_deadlock_and_livelock.md)（p. 257）
+- [15. Quality of Service](15_quality_of_service.md)（p. 285）
+- [16. Router Architecture](16_router_architecture.md)（p. 305）
+- [17. Router Datapath Components](17_router_datapath_components.md)（p. 325）
+- [18. Arbitration](18_arbitration.md)（p. 349）
+- [19. Allocation](19_allocation.md)（p. 363）
+- [20. Network Interfaces](20_network_interfaces.md)（p. 389）
+- [21. Error Control](21_error_control.md)（p. 411）
+- [22. Buses](22_buses.md)（p. 427）
+- [23. Performance Analysis](23_performance_analysis.md)（p. 449）
+- [24. Simulation](24_simulation.md)（p. 473）
+- [25. Simulation Examples](25_simulation_examples.md)（p. 495）
+
+## 源码、实验和引用规则
+
+BookSim2 基线为 [`28f43299f1706a3160ffac721ca461d74eb6e618`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)。源码片段可按 permalink 回到对应行，版权与免责声明见[上游许可](/notes/booksim-notes/source-license.txt)。BookSim 是性能模拟器；阅读其中 C++ 容器和事件调度时，不应把它们直接当作可综合硬件。
+
+- [完整原书目录、小节页码、源码路线与图片清单](appendix-reading-map.md)：含原书附录 A/B/C 的位置，区别于本专栏追加附录。
+- [补充实验：2×2 Mesh 配置、工具链与实际结果](appendix-simulation-results.md)：只验证构建、参数和统计路径，未声称复现原书全部图表。
+- 图按章节分类保存在 `pic/`，每张新增图同时保留 SVG 和 draw.io；图注说明原书依据、抽象范围与是否测量结果。
+- 第 18 章引用 SiliconCrafters 的固定优先级与轮转仲裁博客，借鉴讲解角度并注明原链接；技术判断仍结合原书和固定源码核验。
+
+原书 PDF 仅作本地阅读参考，不随网站发布。正文摘述原理并标明出处，不分发整本教材。所有实验环境只公开工具链与配置，不公开服务器地址、账户或认证信息。
+
+[返回专栏目录](/booksim-series.html)

@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Local reference books; do not publish full copyrighted PDFs
+notes/booksim-notes/ref/

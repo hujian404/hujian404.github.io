@@ -1,35 +1,100 @@
-# Chapter 24｜Simulation｜构建、配置与可重复的周期模型
+# Chapter 24｜Simulation
 
-> 以《Principles and Practices of Interconnection Networks》的章节主题为学习顺序；本文为概念整理与固定版本源码解读，不是原书逐句翻译。BookSim2 基线：[`28f4329`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)。
+> 原书：William J. Dally、Brian Towles，*Principles and Practices of Interconnection Networks*（Morgan Kaufmann，2004），第 24 章，印刷页 473–494。本地参考 PDF 的页序为印刷页 +27。以下为中文学习整理，保留原书全部目录小节的编号与标题，不是逐句翻译。BookSim2 对照版本固定为 [`28f4329`](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)。
 
-## 1. 固定源码与构建入口
+[专栏导读](00_Introduction.md) · [原书目录与页码对照](appendix-reading-map.md)
 
-本系列源码固定为 BookSim2 `28f43299f1706a3160ffac721ca461d74eb6e618`。构建入口是 src/Makefile，依赖 C / C++ compiler、GNU Make、Flex 和 Bison。固定提交仍不足以完全重建数值，还需保存工具版本、有效配置、seed 和运行输出。
+## 24.1 Levels of Detail
 
-```bash
-git clone https://github.com/booksim/booksim2.git booksim-study
-cd booksim-study
-git checkout --detach 28f43299f1706a3160ffac721ca461d74eb6e618
-make -C src -j4
-```
+*原书印刷页 473。*
 
-本次已在独立临时目录完成构建并运行三个 smoke 配置。该提交的 main 将正常 Run 的 true 转成 -1（Unix 255），而非通常的0；返回码必须和最终统计、错误及 unstable 标记共同判断，具体见[验证附录](appendix-simulation-results.md)。
+抽象层次决定可以回答的问题：解析/事务/packet/flit/周期/电路级各有成本。BookSim2 是性能模拟器，适于研究配置下的网络行为，不生成可综合 RTL，也不直接证明时序收敛或功耗。
 
-## 2. 周期精确的范围来自模型假设
+## 24.2 Network Workloads
 
-BookSim 按离散周期组织 router、channel、credit 和 traffic；这不意味着它自动模拟门级传播、CDC、协议所有状态或物理拥塞。研究结论应限定在模型表达的层次，并说明哪些参数由硬件实现或外部模型提供。
+*原书印刷页 475。*
 
-源码里的计算开销影响仿真运行速度，配置里的 delay 影响被模拟网络；宿主机用了多少秒和 packet 花了多少cycle是两个坐标。
+workload 既包含源宿选择，也包含到达过程、包长和因果依赖。只配置 uniform 不足以完整定义实验。
 
-## 3. Warmup、采样、排空与停止
+### 24.2.1 Application-Driven Workloads
 
-warmup_periods、sample_period、max_samples 与收敛阈值影响样本集合。过小的窗口会让曲线波动，过大的排队可能触发 latency_thres；不稳定标记、超时和提前终止必须保留，不能只取最后打印的一行平均值。
+*原书印刷页 475。*
 
-比较设计时一次只改变目标因素，其他配置明确写出。默认值也属于实验配置，版本变化可能改变默认，因此不能只保存覆盖的两三个参数。
+application-driven 来自执行或 trace，保留真实程序的部分结构，但 trace 重放是否反馈网络延迟会改变闭环行为。
 
-这个版本在达到 max_samples 时也可能从 running 进入 drain 并返回成功，不能把正常结束直接解释为满足连续三次稳定采样。正式实验应保存收敛历史，必要时扩大窗口与采样上限。
+### 24.2.2 Synthetic Workloads
 
-## 4. BookSim 源码拆解
+*原书印刷页 476。*
+
+synthetic 便于控制均匀、置换、热点和突发，适合隔离机制；应覆盖能暴露目标算法弱点的模式。
+
+## 24.3 Simulation Measurements
+
+*原书印刷页 478。*
+
+统计方法需与研究问题配套：先排除初始化偏差，再收集足够的稳态样本，最后估计不确定性。一次短跑不能支持普遍结论。
+
+### 24.3.1 Simulator Warm-Up
+
+*原书印刷页 479。*
+
+warm-up 让队列和利用率离开全空初态。高负载时所需时间可能更长，应观察时间序列而不是机械复用同一拍数。
+
+### 24.3.2 Steady-State Sampling
+
+*原书印刷页 481。*
+
+steady-state sampling 需检查均值、吞吐及队列趋势。达到 max_samples 只是一个结束条件，不自动等于统计收敛。
+
+### 24.3.3 Confidence Intervals
+
+*原书印刷页 482。*
+
+网络样本通常有相关性，不能把每个 flit 都当独立样本套置信区间。可采用独立重复和合适批均值，并报告种子与方法。
+
+## 24.4 Simulator Design
+
+*原书印刷页 484。*
+
+simulator design 应保证因果、资源守恒和统计边界一致。执行速度优化必须保持模型的事件顺序。
+
+### 24.4.1 Simulation Approaches
+
+*原书印刷页 485。*
+
+time-stepped 逐周期推进，event-driven 跳到下一事件；二者都必须处理同一时刻的更新语义，不能让后执行节点偷看不该同拍可见的状态。
+
+### 24.4.2 Modeling Source Queues
+
+*原书印刷页 488。*
+
+source queue 保存尚未获准注入的流量。忽略它会让网络看起来 latency 低，却把拥塞推到测量边界以外。
+
+### 24.4.3 Random Number Generation
+
+*原书印刷页 490。*
+
+固定并记录 seed 有助复现；多 seed 用于估计变异。相同 seed 在不同算法中未必产生相同通信事件序列，要核对随机数消费路径。
+
+### 24.4.4 Troubleshooting
+
+*原书印刷页 491。*
+
+从单消息、单流、低负载和守恒计数逐步排查；再检查 VC 依赖、credit 和事件时间。遇到异常退出同时看日志，不能只信 exit code。
+
+## 24.5 Bibliographic Notes
+
+*原书印刷页 491。*
+
+本节对应原书 p. 491 的文献脉络。继续查阅时应回到原书该节和书末 Bibliography，区分最初提出的方法、后续实现与本文使用的 BookSim2 版本。本文末尾源码链接是实现对照，不作为原书历史论述的替代依据。
+
+## 24.6 Exercises
+
+*原书印刷页 492。*
+
+自拟练习（不复制原书习题）：先执行第25章的最小配置并保存 stdout 和退出码，再重复相同 seed 检查可重复性。多seed统计时显式改 seed，不把确定性重跑当成独立样本。保存异常结果和收敛状态，避免在图表中悄悄丢弃过载点。
+
+## BookSim2 源码对照与适用边界
 
 固定版本节选（仅去除行末空白），省略外围上下文：[查看 src/trafficmanager.cpp 第 954–961 行](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/trafficmanager.cpp#L954-L961)。
 
@@ -46,22 +111,12 @@ void TrafficManager::_Step( )
 
 _Step 推进一个网络周期，先组织接收 / credit，再处理生成和注入，以及网络对象的周期操作。读取时沿实际函数完整跟踪，不要把主循环里的一个 C++ statement 当成硬件的一个 stage。Run 管理仿真重复与结束，BatchTrafficManager 又具有不同的测量目标。
 
-## 5. 学习练习与实验边界
+运行方法、工具链版本、退出码解释和现有 smoke 数据统一见[补充实验](appendix-simulation-results.md)。`max_samples` 触发结束与统计意义的收敛不同，复现实验必须同时保留配置、日志和判定规则。
 
-先执行第25章的最小配置并保存 stdout 和退出码，再重复相同 seed 检查可重复性。多seed统计时显式改 seed，不把确定性重跑当成独立样本。保存异常结果和收敛状态，避免在图表中悄悄丢弃过载点。
+## 来源与继续阅读
 
-## 源码与阅读导航
+- 原书第 24 章，pp. 473–494；各节页码已逐项列出。案例与原书公式均以本地参考书为依据。
+- [BookSim2 固定版本源码](https://github.com/booksim/booksim2/tree/28f43299f1706a3160ffac721ca461d74eb6e618)，节选保留[上游许可](/notes/booksim-notes/source-license.txt)。
+- [全书章节/源码路线与图片来源](appendix-reading-map.md)。新增图均附 `.drawio` 源文件，插图是结构说明，不是测量波形。
 
-- [src/trafficmanager.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/trafficmanager.cpp)
-- [src/Makefile](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/Makefile)
-- [src/booksim_config.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/booksim_config.cpp)
-- [src/batchtrafficmanager.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/batchtrafficmanager.cpp)
-- [src/main.cpp](https://github.com/booksim/booksim2/blob/28f43299f1706a3160ffac721ca461d74eb6e618/src/main.cpp)
-
-源码节选版权归 Trustees of The Leland Stanford Junior University，保留[上游许可与免责声明](/notes/booksim-notes/source-license.txt)。新增架构图与算例为教学整理；未执行的方案不标作测量结果。
-
-[上一篇](23_performance_analysis.md) · [专栏导读](00_Introduction.md)
-
----
-
-[下一篇：Chapter 25 — Simulation Examples｜从 smoke 到实验闭环](25_simulation_examples.md)
+[上一篇](23_performance_analysis.md) · [下一篇](25_simulation_examples.md) · [专栏目录](/booksim-series.html)
