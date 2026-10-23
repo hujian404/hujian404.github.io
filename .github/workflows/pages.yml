@@ -71,9 +71,14 @@ jobs:
           test -s "$GITHUB_WORKSPACE/_site/resume/cv/index.html"
           test -s "$GITHUB_WORKSPACE/_site/resume/en/index.html"
           test -s "$GITHUB_WORKSPACE/_site/resume/en/cv/index.html"
-          grep -q 'lang="zh-CN"' "$GITHUB_WORKSPACE/_site/resume/index.html"
+          grep -Eq 'lang="zh(-CN)?"' "$GITHUB_WORKSPACE/_site/resume/index.html"
           grep -q 'lang="en"' "$GITHUB_WORKSPACE/_site/resume/en/index.html"
           grep -q 'Jian Hu' "$GITHUB_WORKSPACE/_site/resume/en/cv/index.html"
+          test -s "$GITHUB_WORKSPACE/_site/resume/images/hj.png"
+          test -s "$GITHUB_WORKSPACE/_site/resume/assets/css/main.css"
+          test -s "$GITHUB_WORKSPACE/_site/resume/en/projects/index.html"
+          grep -q 'author__avatar' "$GITHUB_WORKSPACE/_site/resume/index.html"
+          grep -q 'MEng Student in Computer Technology (Electronic Information)' "$GITHUB_WORKSPACE/_site/resume/en/index.html"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
