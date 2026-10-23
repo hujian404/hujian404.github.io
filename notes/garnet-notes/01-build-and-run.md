@@ -61,4 +61,3 @@ if (curTick() >= simCycles)
 - [用户态环境说明](https://github.com/hujian404/gem5/blob/ec031fa4e97945c426244566fd6196c7cb2b8e7c/mydocs/BUILD_AND_RUN_GEM5.md)
 
 [下一篇：从 Message 到 flit：NI、vnet 与 VC](02-message-ni-vc.md)
-
