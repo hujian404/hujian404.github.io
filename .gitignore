@@ -132,3 +132,6 @@ dist
 # Local reference books; do not publish full copyrighted PDFs
 notes/booksim-notes/ref/
 _site/
+
+# Local logo masters, review boards and generation scripts
+/design/blog-logo/

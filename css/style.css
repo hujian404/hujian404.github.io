@@ -414,6 +414,17 @@ img{
 	background-color: transparent;
 }
 
+.header ul li a.logo img {
+    width: 56px;
+    height: 56px;
+    vertical-align: middle;
+}
+
+.mobile-menu .logo img {
+    width: 40px;
+    height: 40px;
+}
+
 .header ul li a {
 	position: relative;
 	color: #212121;
